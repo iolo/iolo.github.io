@@ -1,0 +1,16 @@
+title: 'Quest of Iolo'
+description: 'Ho eyo he hum!'
+url: 'https://iolo.github.io'
+enforce_ssl: 'iolo.lezhin.io'
+baseurl: ''
+image: '/assets/img/iolo50.png'
+timezone: Asia/Seoul
+date_format: "%Y-%m-%d"
+
+repository: iolo/iolo.github.io
+
+permalink: /:year/:month/:day/:title
+
+excerpt_separator: <!--more-->
+
+markdown: gfm
