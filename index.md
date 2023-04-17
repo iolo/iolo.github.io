@@ -10,4 +10,7 @@ The nickname [Iolo](https://wiki.ultimacodex.com/wiki/Iolo) cames from the legen
 of old-school role-playing game [Ultima Series](https://en.wikipedia.org/wiki/Ultima_(series))
 that altered my whole life.
 
-<img src="/files/iolo-in-ultima4.png" alt="iolo in ultima 4">
+<figure>
+  <img src="/files/iolo-in-ultima4.png">
+  <figcaption>iolo in Ultima IV</figcaption>
+</figure>

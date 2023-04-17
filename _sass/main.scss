@@ -1,3 +1,21 @@
+:root {
+  --bg-color: #eee;
+  --fg-color: #111;
+  --link-color: #11e;
+  --link-active-color: #00f;
+  --link-visited-color: #33c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #111;
+    --fg-color: #eee;
+    --link-color: #ee1;
+    --link-active-color: #ff0;
+    --link-visited-color: #cc3;
+  }
+}
+
 html {
   font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
   font-family: monospace;
@@ -38,20 +56,20 @@ body > footer {
 }
 
 html, body {
-  background-color: #eee;
-  color: #111;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
 }
 
 a, a:link {
-  color: #11e;
-}
-
-a:visited {
-  color: #33c;
+  color: var(--link-color);
 }
 
 a:active, a:hover {
-  color: #00f;
+  color: var(--link-active-color);
+}
+
+a:visited {
+  color: var(--link-visited-color);
 }
 
 body > header > nav {
@@ -64,8 +82,7 @@ pre {
   padding: 1rem;
 }
 
-.post-content img {
+figure {
   max-width: 100%;
-  display: block;
-  margin: 1rem auto;
+  text-align: center;
 }

@@ -24,5 +24,8 @@ title: 블로그 양털깍기에 대한 변명
 1. 여긴 어디? 난 누규?! 흠... 역시 그냥 서비스 써야겠다. 티스토리? 워드프레스? 미디엄? 브런치? 요즘도 [dev.to](https://dev.io/) 많이 쓰나? 어랏.. 여기 이미 [만들어 놓은 것](https://dev.to/iolo)도 있네.. Orz
 1. 너무 멀리 가지마. 모든 걸 삼킬지 몰라...
 
-[![신경망을 훈련시켰어요](/files/trained_a_neural_net.png)](https://xkcd.com/2173/)
+<figure>
+  <a href="https://xkcd.com/2173/"><img src="/files/trained_a_neural_net.png"></a>
+  <figcaption>신경망을 훈련시켰어요</figcaption>
+</figure>
 

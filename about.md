@@ -16,6 +16,9 @@ You can find me on:
 - [twitter](https://twitter.com/iolothebard)
 - or somewhere in [Jeju island](https://goo.gl/maps/zGWvqxtDfwZUpH6m9)
 
-<img src="/files/iolo-in-jeju.jpg" alt="iolo in Jeju island">
+<figure>
+  <img src="/files/iolo-in-jeju.jpg">
+  <figcaption>iolo in Jeju island</figcaption>
+</figure>
 
 This site was built with [github pages](https://pages.github.com/), [jekyll](https://github.com/jekyll).
