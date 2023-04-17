@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article>
+  <header>
+    <h2>{{ page.title | strip_html }}</h2>
+    <time datetime="{{ page.date }}" pubdate>{{ page.date | date: site.date_format }}</time>
+    {% if page.author %}<address><a rel="author" href="/about">{{ page.author | strip_html }}</a></address>{% endif %}
+    {% if page.tags.size > 0 %}<dl><dt>tags</dt>{% for tag in page.tags %}<dd>{{ tag }}</dd>{% endfor %}</dl>{% endif %}
+  </header>
+  <section class="post-content">
+  {{ content }}
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <!-- todo: comments -->
+  </footer>
+</article>
