@@ -1,15 +1,65 @@
+
+html {
+  font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
+}
+
 body {
-  font-family: monospace;
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body > header {
-  margin: 1em 1em 2em 1em;
+  margin: 1rem 1rem 2rem 1rem;
 }
 
 body > main {
-  margin: 1em;
+  margin: 1rem;
+  flex: 1;
 }
 
 body > footer {
-  margin: 2em 1em 1em 1em;
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+@media (max-width: 960px) {
+  body > header {
+    margin: .2rem .2rem .5rem .2rem;
+  }
+
+  body > main {
+    margin: .2rem;
+  }
+
+  body > footer {
+    margin: auto .2rem .2rem .2rem;
+  }
+}
+
+html, body {
+  background-color: #eee;
+  color: #111;
+}
+
+a, a:link {
+  color: #11e;
+}
+
+a:visited {
+  color: #33c;
+}
+
+a:active, a:hover {
+  color: #00f;
+}
+
+body > header > nav {
+  font-weight: bold;
+}
+
+pre {
+  background: #333;
+  color: #0f0;
+  padding: 1rem;
 }
