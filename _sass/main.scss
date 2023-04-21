@@ -86,3 +86,11 @@ figure {
   max-width: 100%;
   text-align: center;
 }
+
+@media only screen and (prefers-color-scheme: light) {
+  @import 'rouge-github';
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  @import 'rouge-github-dark';
+}
