@@ -6,7 +6,7 @@ permalink: /about/
 
 Dongsu Jang is...
 
-> APPLE ][+ Kid, F**oo**ll-stack software engineer from Desktop, Mobile, Web Frontend to Backend, and Data Engineering.
+> APPLE ][+ Kid, F**oo**l-stack software engineer from Desktop, Mobile, Web Frontend to Backend, and Data Engineering.
 
 You can find me on:
 
@@ -18,7 +18,7 @@ You can find me on:
 
 <figure>
   <img src="/files/iolo-in-jeju.jpg">
-  <figcaption>iolo in Jeju island</figcaption>
+  <figcaption>Iolo in Jeju Island</figcaption>
 </figure>
 
 This site was built with [github pages](https://pages.github.com/), [jekyll](https://github.com/jekyll).

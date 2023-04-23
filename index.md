@@ -12,5 +12,5 @@ that altered my whole life.
 
 <figure>
   <img src="/files/iolo-in-ultima4.png">
-  <figcaption>iolo in Ultima IV</figcaption>
+  <figcaption>Iolo in Ultima IV</figcaption>
 </figure>

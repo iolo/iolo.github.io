@@ -18,7 +18,6 @@
 
 html {
   font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
-  font-family: monospace;
 }
 
 body {
@@ -79,18 +78,14 @@ body > header > nav {
 pre {
   background: #333;
   color: #0f0;
-  padding: 1rem;
 }
 
 figure {
-  max-width: 100%;
   text-align: center;
+  > img {
+    max-width: 100%;
+  }
 }
 
-@media only screen and (prefers-color-scheme: light) {
-  @import 'rouge-github';
-}
-
-@media only screen and (prefers-color-scheme: dark) {
-  @import 'rouge-github-dark';
-}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css") only screen and (prefers-color-scheme:dark);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css") only screen and (prefers-color-scheme:dark);

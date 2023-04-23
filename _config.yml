@@ -14,4 +14,7 @@ permalink: /:year/:month/:day/:title
 
 excerpt_separator: <!--more-->
 
-markdown: gfm
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable : true
