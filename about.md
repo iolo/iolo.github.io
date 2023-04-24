@@ -21,4 +21,4 @@ You can find me on:
   <figcaption>Iolo in Jeju Island</figcaption>
 </figure>
 
-This site was built with [github pages](https://pages.github.com/), [jekyll](https://github.com/jekyll).
+This site was built with [Github Pages](https://pages.github.com/), [Jekyll](https://github.com/jekyll).

@@ -26,13 +26,13 @@ title: 튜링 머신 에뮬레이터 with chatGPT
 > 2. 계산 수행: 튜링 머신은 전이 함수 δ에 따라 계산을 수행합니다. 현재 상태와 테이프 헤드가 가리키는 기호에 따라 새로운 상태로 이동하고, 셀에 새로운 기호를 쓴 다음 테이프 헤드를 왼쪽이나 오른쪽으로 이동합니다. 이 과정을 계산이 완료될 때까지 반복합니다.
 > 3. 계산 완료: 튜링 머신이 종료 상태 집합 F 중 하나의 상태에 도달하면 계산이 완료된 것으로 간주합니다. 이때 테이프에 기록된 내용이 계산 결과가 됩니다.
 
-<figure>
-  <video src="/files/ghostintheshell-robot-typing.mp4" autoplay loop muted/>
-</figure>
-
 자바스크립트로 간단히 만들어 달라고 했더니...
 클래스까지 동원해서 그럴싸한 코드를 뱉어낸다!
 (자바스크립트의 특성 때문에 발생하는 사소한 버그들이 있지만 넘어가자)
+
+<figure>
+  <video src="/files/ghostintheshell-robot-typing.mp4" autoplay loop muted/>
+</figure>
 
 ```js
 export class TuringMachine {
@@ -209,5 +209,5 @@ console.log(output); // 출력: [ 'D', 'E', 'B', 'C' ] (암호화된 문자열)
 
 아니나 다를까, 이어진 질문에서 완전 삐딱선을 타서, 오늘의 수다는 여기서 종료.
 
-소스는 [gist](https://gist.github.com/iolo/b5c3fcdf286b5ded38911b855463006d)에 올려두었다.
+지금까지 작업한 소스는 [gist](https://gist.github.com/iolo/b5c3fcdf286b5ded38911b855463006d)에 올려두었다.
 

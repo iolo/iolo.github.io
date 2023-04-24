@@ -42,9 +42,9 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 
   > header {
-    margin: 1rem 1rem 2rem 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -56,24 +56,19 @@ body {
   }
 
   > main {
-    margin: 1rem;
     flex: 1;
+    width: 960px;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   > footer {
-    margin: 2rem 1rem 1rem 1rem;
+    flex: 0;
   }
 }
 
 @media (max-width: 960px) {
   body {
-    > header {
-      margin: .2rem .2rem .5rem .2rem;
-    }
-
-    > main {
-      margin: .2rem;
-    }
   }
 }
 
@@ -84,5 +79,5 @@ figure {
   }
 }
 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css") only screen and (prefers-color-scheme:dark);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css") only screen and (prefers-color-scheme:light);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css") only screen and (prefers-color-scheme:dark);
