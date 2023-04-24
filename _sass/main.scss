@@ -49,6 +49,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     > nav {
+      font-size: 2rem;
       font-weight: bold;
       margin-left: auto;
     }
@@ -78,7 +79,7 @@ body {
 
 figure {
   text-align: center;
-  > img {
+  > * {
     max-width: 100%;
   }
 }
