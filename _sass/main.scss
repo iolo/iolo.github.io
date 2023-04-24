@@ -16,44 +16,6 @@
   }
 }
 
-html {
-  font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
-}
-
-body {
-  font-size: 1.6rem;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-body > header {
-  margin: 1rem 1rem 2rem 1rem;
-}
-
-body > main {
-  margin: 1rem;
-  flex: 1;
-}
-
-body > footer {
-  margin: 2rem 1rem 1rem 1rem;
-}
-
-@media (max-width: 960px) {
-  body > header {
-    margin: .2rem .2rem .5rem .2rem;
-  }
-
-  body > main {
-    margin: .2rem;
-  }
-
-  body > footer {
-    margin: auto .2rem .2rem .2rem;
-  }
-}
-
 html, body {
   background-color: var(--bg-color);
   color: var(--fg-color);
@@ -71,13 +33,47 @@ a:visited {
   color: var(--link-visited-color);
 }
 
-body > header > nav {
-  font-weight: bold;
+html {
+  font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
 }
 
-pre {
-  background: #333;
-  color: #0f0;
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  > header {
+    margin: 1rem 1rem 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    > nav {
+      font-weight: bold;
+      margin-left: auto;
+    }
+  }
+
+  > main {
+    margin: 1rem;
+    flex: 1;
+  }
+
+  > footer {
+    margin: 2rem 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  body {
+    > header {
+      margin: .2rem .2rem .5rem .2rem;
+    }
+
+    > main {
+      margin: .2rem;
+    }
+  }
 }
 
 figure {
