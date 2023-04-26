@@ -16,10 +16,20 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Sans+KR:wght@100;400;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css") only screen and (prefers-color-scheme:light);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css") only screen and (prefers-color-scheme:dark);
+
 html, body {
   background-color: var(--bg-color);
   color: var(--fg-color);
+  font-family: 'IBM Plex Sans KR', sans-serif;
 }
+
+pre, code, tt, kbd {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
 
 a, a:link {
   color: var(--link-color);
@@ -78,6 +88,3 @@ figure {
     max-width: 100%;
   }
 }
-
-@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css") only screen and (prefers-color-scheme:light);
-@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css") only screen and (prefers-color-scheme:dark);
