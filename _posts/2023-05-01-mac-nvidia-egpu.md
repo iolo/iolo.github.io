@@ -10,7 +10,7 @@ title: 구형 인텔 맥 + 엔비디아 + eGPU 삽질기
 </figure>
 
 1. [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit)가 필요하다. 특히 [CUDA](https://en.wikipedia.org/wiki/CUDA)를 지원하는 [엔비디아 GPU](https://developer.nvidia.com/cuda-gpus)가 필요하다.
-2. 당근에서 적당한 중고 [4090](https://www.nvidia.com/ko-kr/geforce/graphics-cards/40-series/rtx-4090/)을 찾아서 뒤적거리다가 [MSI RTX 3090](https://www.msi.com/Graphics-Card/GeForce-RTX-3090-GAMING-X-TRIO-24G)을 업어왔다.
+2. 당근에서 적당한 중고 [4090](https://www.nvidia.com/ko-kr/geforce/graphics-cards/40-series/rtx-4090/)을 찾아서 뒤적거리다가 상대적으로 저렴한(?) [MSI RTX 3090](https://www.msi.com/Graphics-Card/GeForce-RTX-3090-GAMING-X-TRIO-24G)을 업어왔다.
 3. 그런데 이걸 어디에 꽂지? 난 PCIe 슬롯이 있는 데스크탑이 없는데?
 4. 내가 쓸 수 있는 장비는 [2020 M1 MacBook Air](https://support.apple.com/kb/SP825)와 [2018 인텔 맥미니](https://support.apple.com/kb/SP782), [2013 연탄 맥프로](https://support.apple.com/kb/sp697)와 [2018 씽크패드 X1 카본 6세대](https://en.wikipedia.org/wiki/ThinkPad_X1_series#X1_Carbon_(6th_Gen)) 밖에 없다. 많지만, 쓸만한 건 하나도 없다. Orz
 5. 뜻이 있는 곳에 길이 있다고, [eGPU](https://egpu.io/)라는 게 있더라.
