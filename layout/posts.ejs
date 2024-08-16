@@ -1,0 +1,8 @@
+<ul>
+<% for (const post of posts) { %>
+<li>
+  <a href="<%- post.path %>"><%= post.title %></a>
+  <small><datetime datetime="<%= post.date.toISOString() %>"><%= post.date.toISOString() %></datetime></small>
+</li>
+<% } %>
+</ul>
