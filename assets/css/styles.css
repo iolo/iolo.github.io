@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Sans+KR:wght@100;400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css") only screen and (prefers-color-scheme: light);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css") only screen and (prefers-color-scheme: dark);
+:root {
+  --bg-color: #eee;
+  --fg-color: #111;
+  --link-color: #11e;
+  --link-active-color: #00f;
+  --link-visited-color: #33c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #111;
+    --fg-color: #eee;
+    --link-color: #ee1;
+    --link-active-color: #ff0;
+    --link-visited-color: #cc3;
+  }
+}
+html, body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+pre, code, tt, kbd {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+a, a:link {
+  color: var(--link-color);
+}
+
+a:active, a:hover {
+  color: var(--link-active-color);
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}
+
+html {
+  font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+body > header > nav {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: auto;
+}
+body > main {
+  flex: 1;
+  width: 960px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+body > footer {
+  flex: 0;
+}
+
+figure {
+  text-align: center;
+}
+figure > * {
+  max-width: 100%;
+}

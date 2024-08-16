@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="author" content="" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="튜링 머신 에뮬레이터 with chatGPT" />
+    <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta property="og:url" content="https://iolo.krhttps://iolo.kr/posts/2023-04-21-turing-machine-poc.html" />
+    <meta property="og:site_name" content="Quest of Iolo" />
+    <meta property="og:image" content="/assets/img/iolo50.png" />
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="튜링 머신 에뮬레이터 with chatGPT" />
+    <meta name="twitter:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="twitter:url" content="https://iolo.krhttps://iolo.kr/posts/2023-04-21-turing-machine-poc.html" />
+    <meta name="twitter:image:src" content="/assets/img/iolo50.png" />
+    
+    <link rel="canonical" href="https://iolo.krhttps://iolo.kr/posts/2023-04-21-turing-machine-poc.html" />
+    <link rel="alternate" type="application/rss+xml" href="https://iolo.kr/rss" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <title>튜링 머신 에뮬레이터 with chatGPT - Quest of Iolo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="iolo/iolo.github.io"
+      data-repo-id="R_kgDOH6UEWg"
+      data-category="giscus"
+      data-category-id="DIC_kwDOH6UEWs4CV5Qw"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <img src="/assets/img/iolo50.png" alt="Iolo in Ultima IV with 11x13 pixels"/>
+      <h1>Quest of Iolo</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/artifacts">Artifacts</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main><article>
+  <header>
+    <h2>튜링 머신 에뮬레이터 with chatGPT</h2>
+    <time datetime="2023-05-20T15:00:00.000Z" pubdate>2023-05-20T15:00:00.000Z</time>
+    
+    
+  </header>
+  <section class="post-content">
+  <p><a href="https://chat.openai.com/">chatGPT</a>와 컴퓨터의 탄생에 대해서 수다를 떨다가 <a href="https://en.wikipedia.org/wiki/Turing_machine">튜링 머신</a> 얘기가 나오길래...</p>
+<p>좀 더 구체적인으로 설명해달라고 했더니:</p>
+<blockquote>
+<p>튜링 머신은 다음과 같은 튜플로 정의될 수 있습니다:</p>
+<p>M = (Q, Σ, Γ, δ, q0, B, F)</p>
+<ol>
+<li>Q: 유한한 상태 집합입니다. 상태는 튜링 머신의 작동을 결정하는데 사용되며, 계산 과정 동안 튜링 머신은 여러 상태를 가질 수 있습니다.</li>
+<li>Σ: 유한한 입력 알파벳입니다. 테이프에 기록되는 기호 중 입력으로 사용되는 것들의 집합입니다. 이 집합에는 특별한 공백 기호인 B가 포함되지 않습니다.</li>
+<li>Γ: 유한한 테이프 알파벳입니다. 테이프에 기록될 수 있는 모든 기호의 집합입니다. 이 집합은 Σ와 공백 기호 B를 포함하고 있어야 합니다. (Σ ⊆ Γ, B ∈ Γ)</li>
+<li>δ: 전이 함수입니다. 현재 상태와 테이프 헤드가 가리키는 기호에 따라 새로운 상태, 쓸 기호, 테이프 헤드의 이동 방향을 결정하는 함수입니다. δ: Q × Γ → Q × Γ × {L, R}로 정의됩니다.</li>
+<li>q0: 초기 상태입니다. 계산이 시작되는 시점에 튜링 머신이 가지고 있는 상태입니다. (q0 ∈ Q)</li>
+<li>B: 공백 기호입니다. 테이프의 빈 셀에 사용되는 기호로, 테이프 알파벳 Γ의 일부입니다.</li>
+<li>F: 종료 상태 집합입니다. 계산이 완료되었을 때 튜링 머신이 도달하는 상태들의 집합입니다. (F ⊆ Q)</li>
+</ol>
+<p>전이 함수 δ는 튜링 머신의 작동 규칙을 결정합니다. 함수의 정의에 따라, 튜링 머신은 현재 상태와 테이프 헤드가 가리키는 기호를 바탕으로 다음 상태로 이동하고, 셀에 새로운 기호를 쓴 다음 테이프 헤드를 왼쪽이나 오른쪽으로 이동합니다. 이 과정을 계산이 완료될 때까지, 즉 튜링 머신이 종료 상태 집합 F에 있는 상태에 도달할 때까지 반복합니다.</p>
+<p>문제를 풀기 위한 튜링 머신은 다음과 같은 단계를 거쳐 작동합니다.</p>
+<ol>
+<li>초기 설정: 테이프에 입력 데이터를 기록하고, 튜링 머신의 상태를 초기 상태 q0으로 설정합니다. 테이프 헤드는 입력 데이터의 시작 부분에 위치시킵니다.</li>
+<li>계산 수행: 튜링 머신은 전이 함수 δ에 따라 계산을 수행합니다. 현재 상태와 테이프 헤드가 가리키는 기호에 따라 새로운 상태로 이동하고, 셀에 새로운 기호를 쓴 다음 테이프 헤드를 왼쪽이나 오른쪽으로 이동합니다. 이 과정을 계산이 완료될 때까지 반복합니다.</li>
+<li>계산 완료: 튜링 머신이 종료 상태 집합 F 중 하나의 상태에 도달하면 계산이 완료된 것으로 간주합니다. 이때 테이프에 기록된 내용이 계산 결과가 됩니다.</li>
+</ol>
+</blockquote>
+<p>자바스크립트로 간단히 만들어 달라고 했더니...
+클래스까지 동원해서 그럴싸한 코드를 뱉어낸다!
+(자바스크립트의 특성 때문에 발생하는 사소한 버그들이 있지만 넘어가자)</p>
+<figure>
+  <video src="/files/ghostintheshell-robot-typing.mp4" autoplay loop muted/>
+</figure>
+
+<pre><code class="language-js">export class TuringMachine {
+  constructor(tape = [&#39;B&#39;], state = &#39;q0&#39;, head = 0, transitionFunction = {}, finalStates = []) {
+    this.tape = tape;
+    this.state = state;
+    this.head = head;
+    this.transitionFunction = transitionFunction;
+    this.finalStates = finalStates;
+  }
+
+  step() {
+    const currentSymbol = this.tape[this.head] || &#39;B&#39;;
+    const transition = this.transitionFunction[this.state]?.[currentSymbol];
+
+    if (!transition) {
+      return false; // transition not found, halt the machine
+    }
+
+    const [newState, newSymbol, direction] = transition;
+    this.state = newState;
+    this.tape[this.head] = newSymbol;
+    this.head += direction === &#39;R&#39; ? 1 : -1;
+
+    return !this.finalStates.includes(this.state);
+  }
+
+  run() {
+    while (this.step()) {}
+    return this.tape;
+  }
+}
+
+// Example usage:
+const transitionFunction = {
+  q0: {
+    &#39;0&#39;: [&#39;q0&#39;, &#39;1&#39;, &#39;R&#39;],
+    &#39;1&#39;: [&#39;q1&#39;, &#39;1&#39;, &#39;R&#39;],
+    &#39;B&#39;: [&#39;q1&#39;, &#39;1&#39;, &#39;R&#39;]
+  },
+  q1: {
+    &#39;0&#39;: [&#39;q1&#39;, &#39;0&#39;, &#39;R&#39;],
+    &#39;1&#39;: [&#39;q0&#39;, &#39;0&#39;, &#39;L&#39;],
+    &#39;B&#39;: [&#39;q2&#39;, &#39;B&#39;, &#39;L&#39;]
+  }
+};
+
+const finalStates = [&#39;q2&#39;];
+
+const tm = new TuringMachine([&#39;0&#39;, &#39;0&#39;, &#39;1&#39;], &#39;q0&#39;, 0, transitionFunction, finalStates);
+const output = tm.run(); // The final tape after the Turing machine halts
+console.log(output);
+</code></pre>
+<p>예제를 위한 예제를 덧붙여 놨길래, 동작 원리를 이해하는 데 도움이 되는 간단한 예제를 만들어 달라고 했더니 <strong>2진수 +1</strong>하는 예제를 뱉어낸다
+(이론적인 튜링 머신과 달리 자바스크립트의 배열은 양끝이 열린 테이프가 아니기 때문에 미묘한 버그가 있지만 넘어가자):</p>
+<pre><code class="language-js">const transitionFunction = {
+  q0: {
+    0: [&#39;q0&#39;, &#39;0&#39;, &#39;R&#39;],
+    1: [&#39;q0&#39;, &#39;1&#39;, &#39;R&#39;],
+    B: [&#39;q1&#39;, &#39;END&#39;, &#39;L&#39;],
+  },
+  q1: {
+    0: [&#39;q2&#39;, &#39;1&#39;, &#39;R&#39;],
+    1: [&#39;q1&#39;, &#39;0&#39;, &#39;L&#39;],
+  },
+};
+
+const finalStates = [&#39;q2&#39;];
+const input = [&#39;1&#39;, &#39;0&#39;, &#39;1&#39;]; // 이진수 101
+
+const tm = new TuringMachine(input, &#39;q0&#39;, 0, transitionFunction, finalStates);
+const output = tm.run();
+console.log(output); // 출력: [ &#39;1&#39;, &#39;1&#39;, &#39;0&#39; ] (이진수 110)
+</code></pre>
+<p>10진수에 익숙한 내 머리로는 <strong>2진수 +1</strong>하는 코드가 한 눈에 이해가 안되서
+<strong>10진수 +1</strong>하는 (튜링머신) 코드를 만들어 달라고 했더니,
+자바스크립트 코드로 튜링머신 코드를 생성하는 뻘짓도하고 쉽게 알아채기 힘든 미묘한 버그도 함께 뱉어낸다:</p>
+<pre><code class="language-js">const transitionFunction = {
+  q0: {
+    ...Array.from({ length: 9 }, (_, i) =&gt; [i, [&#39;q0&#39;, i + 1, &#39;R&#39;]]).reduce((obj, [k, v]) =&gt; ({ ...obj, [k]: v }), {}),
+    &#39;9&#39;: [&#39;q0&#39;, &#39;0&#39;, &#39;R&#39;],
+    &#39;B&#39;: [&#39;q1&#39;, &#39;B&#39;, &#39;L&#39;]
+  },
+  q1: {
+    ...Array.from({ length: 9 }, (_, i) =&gt; [i, [&#39;q2&#39;, i + 1, &#39;R&#39;]]).reduce((obj, [k, v]) =&gt; ({ ...obj, [k]: v }), {}),
+    &#39;9&#39;: [&#39;q1&#39;, &#39;0&#39;, &#39;L&#39;]
+  }
+};
+
+const finalStates = [&#39;q2&#39;];
+const input = [&#39;9&#39;, &#39;9&#39;, &#39;9&#39;]; // 10진수 999
+
+const tm = new TuringMachine(input, &#39;q0&#39;, 0, transitionFunction, finalStates);
+const output = tm.run();
+console.log(output); // 출력: [ &#39;1&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39; ] (10진수 1000)
+</code></pre>
+<p>여기서 버그를 잡겠다고 계속 갈구면 삐딱선을 탄다는 것을 경험으로 알고 있기에,
+대충 직접 고쳐본다(휴먼의 힘을 보여줘!):</p>
+<pre><code class="language-js">const transitionFunction = {
+  q0: {
+    ...Array.from({ length: 10 }, (_, i) =&gt; [String(i), [&#39;q0&#39;, String(i), &#39;R&#39;]]).reduce(
+      (obj, [k, v]) =&gt; ({ ...obj, [k]: v }),
+      {}
+    ),
+    // 휴먼 코멘트: 위의 줄은 아래와 같은 튜링머신 코드를 생성
+    // &#39;0&#39;: [&#39;q0&#39;, &#39;0&#39;, &#39;R&#39;],
+    // &#39;1&#39;: [&#39;q0&#39;, &#39;1&#39;, &#39;R&#39;],
+    // ...
+    // &#39;9&#39;: [&#39;q0&#39;, &#39;9&#39;, &#39;R&#39;],
+    &#39;B&#39;: [&#39;q1&#39;, &#39;B&#39;, &#39;L&#39;],
+  },
+  q1: {
+    ...Array.from({ length: 9 }, (_, i) =&gt; [String(i), [&#39;q2&#39;, String(i + 1), &#39;R&#39;]]).reduce(
+      (obj, [k, v]) =&gt; ({ ...obj, [k]: v }),
+      {}
+    ),
+    // 휴먼 코멘트: 위의 줄은 아래와 같은 튜링머신 코드를 생성
+    // &#39;0&#39;: [&#39;q2&#39;, &#39;1&#39;, &#39;R&#39;],
+    // &#39;1&#39;: [&#39;q2&#39;, &#39;2&#39;, &#39;R&#39;],
+    // ...
+    // &#39;8&#39;: [&#39;q2&#39;, &#39;9&#39;, &#39;R&#39;],
+    &#39;9&#39;: [&#39;q1&#39;, &#39;0&#39;, &#39;L&#39;],
+  },
+};
+
+const finalStates = [&#39;q2&#39;];
+const input = [&#39;9&#39;, &#39;0&#39;, &#39;9&#39;]; // 10진수 909
+
+const tm = new TuringMachine(input, &#39;q0&#39;, 0, transitionFunction, finalStates);
+const output = tm.run();
+console.log(output); // 출력: [ &#39;9&#39;, &#39;1&#39;, &#39;0&#39; ] (10진수 910)
+</code></pre>
+<p>아... 이제 뭔소린지 알겠네.</p>
+<p>내친 김에, 튜링머신의 동작원리를 이해하기에 좋을 것 같아서
+<a href="https://en.wikipedia.org/wiki/Caesar_cipher">카이사르 암호</a> 코드를 만들어달라고 했더니...
+살짝 삐닥선을 타길래 더 갈구지 않고 직접 몇군데를 직접 수정했다:</p>
+<pre><code class="language-js">const transitionFunction = {
+  q0: {
+    ...Array.from({ length: 26 }, (_, i) =&gt; [
+      String.fromCharCode(65 + i),
+      [&#39;q0&#39;, String.fromCharCode(65 + ((i + 3) % 26)), &#39;R&#39;],
+    ]).reduce((obj, [k, v]) =&gt; ({ ...obj, [k]: v }), {}),
+    // 휴먼 코멘트: 위의 줄은 아래와 같은 튜링머신 코드를 생성
+    //&#39;A&#39;: [&#39;q0&#39;, &#39;D&#39;, &#39;R&#39;]
+    //&#39;B&#39;: [&#39;q0&#39;, &#39;E&#39;, &#39;R&#39;]
+    //&#39;B&#39;: [&#39;q0&#39;, &#39;F&#39;, &#39;R&#39;]
+    //...
+    //&#39;X&#39;: [&#39;q0&#39;, &#39;A&#39;, &#39;R&#39;]
+    //&#39;Y&#39;: [&#39;q0&#39;, &#39;B&#39;, &#39;R&#39;]
+    //&#39;Z&#39;: [&#39;q0&#39;, &#39;C&#39;, &#39;R&#39;]
+  },
+};
+
+const finalStates = [&#39;q1&#39;];
+const input = [&#39;A&#39;, &#39;B&#39;, &#39;Y&#39;, &#39;Z&#39;]; // 암호화할 문자열
+
+const tm = new TuringMachine(input, &#39;q0&#39;, 0, transitionFunction, finalStates);
+const output = tm.run();
+console.log(output); // 출력: [ &#39;D&#39;, &#39;E&#39;, &#39;B&#39;, &#39;C&#39; ] (암호화된 문자열)
+</code></pre>
+<p>아니나 다를까, 이어진 질문에서 완전 삐딱선을 타서, 오늘의 수다는 여기서 종료.</p>
+<p>지금까지 작업한 소스는 <a href="https://gist.github.com/iolo/b5c3fcdf286b5ded38911b855463006d">gist</a>에 올려두었다.</p>
+
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <div class="giscus"></div>
+  </footer>
+</article>
+</main>
+    <footer>
+      <p>&copy; 1973-2024 IoloTheBard. All rights reserved.</p>
+    </footer>
+    <script>hljs.configure({languages:[]});hljs.highlightAll();</script>
+  </body>
+</html>
