@@ -1,19 +1,17 @@
-:root {
-  --bg-color: #eee;
-  --fg-color: #111;
-  --link-color: #11e;
-  --link-active-color: #00f;
-  --link-visited-color: #33c;
+:root.light-theme {
+  --bg-color: #fff;
+  --text-color: #333;
+  --link-color: #07c;
+  --link-active-color: #07c;
+  --link-visited-color: #07c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #111;
-    --fg-color: #eee;
-    --link-color: #ee1;
-    --link-active-color: #ff0;
-    --link-visited-color: #cc3;
-  }
+:root.dark-theme {
+  --bg-color: #333;
+  --text-color: #fff;
+  --link-color: #09f;
+  --link-active-color: #09f;
+  --link-visted-color: #09f;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Sans+KR:wght@100;400;700&display=swap');
@@ -22,8 +20,9 @@
 
 html, body {
   background-color: var(--bg-color);
-  color: var(--fg-color);
+  color: var(--text-color);
   font-family: 'IBM Plex Sans KR', sans-serif;
+  font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
 }
 
 pre, code, tt, kbd {
@@ -43,8 +42,9 @@ a:visited {
   color: var(--link-visited-color);
 }
 
-html {
-  font-size: 62.5%; /* 10px = 10px / 1browser default(16px) = 62.5% */
+a.nolink {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 body {
@@ -58,10 +58,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    > h1 {
+      background: url('/assets/img/iolo50.png') no-repeat;
+      padding-left: 50px;
+    }
     > nav {
       font-size: 2rem;
       font-weight: bold;
-      margin-left: auto;
     }
   }
 
@@ -73,12 +77,17 @@ body {
   }
 
   > footer {
-    flex: 0;
+    text-align: center;
   }
 }
 
-@media (max-width: 960px) {
+@media (min-width: 960px) {
   body {
+    > header {
+      > h1 {
+        flex: 1;
+      }
+    }
   }
 }
 
@@ -87,4 +96,35 @@ figure {
   > * {
     max-width: 100%;
   }
+}
+
+#themeCheck {
+  appearance: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #999;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#themeCheck::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in;
+}
+
+#themeCheck:checked::before {
+  left: 32px;
 }

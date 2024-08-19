@@ -13,12 +13,13 @@ permalink: /about/
 
 ## TL;DR
 
-> APPLE ][+ Kid, F**oo**l-stack software engineer from Desktop, Mobile, Web Frontend to Backend, and Data Engineering.
+> APPLE \]\[+ Kid, F**oo**l-stack software engineer from Desktop, Mobile, Web Frontend to Backend, and Data Engineering.
 
 ## Experiences
 
-- 2018.08-2023.04 CTO, [Fastcampus](https://fastcampus.co.kr), became [Day1 Company](https://day1company.co.kr/)
-  - [Fastcampus](https://fastcampus.co.kr): online/offline/mixed education services for personal customers
+- 2022.06- Founder & Solitary Programmer, [SooSooTech](https://soosoo.tech/)
+- 2018.08-2023.04 CTO, [Fastcampus](https://fastcampus.co.kr/), became [Day1 Company](https://day1company.co.kr/)
+  - [Fastcampus](https://fastcampus.co.kr/): online/offline/mixed education services for personal customers
   - [Fastcampus for Business](https://fastcampus.app/): online education services for enterprise customers
   - [coloso.co.kr](https://coloso.co.kr/), [coloso.us](https://coloso.us/), [coloso.jp/](https://coloso.jp): multiligual(korean, japanese, english) online education services
   - [zero-base.co.kr](https://zero-base.co.kr/): online/offline/mixed education services with LMS, and career management, recruiting
