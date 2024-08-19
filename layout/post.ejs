@@ -1,7 +1,7 @@
 <article>
   <header>
     <h2><%= page.title %></h2>
-    <time datetime="<%= page.date.toISOString() %>" pubdate><%= page.date.toISOString() %></time>
+    <time datetime="<%= page.date.toISOString() %>" pubdate><%= page.date.toLocaleString() %></time>
     <% if (page.author) { %><address><a rel="author" href="/about"><%= page.author %></a></address><% } %>
     <% if (page.tags) { %><dl><dt>tags</dt><% for (const tag of page.tags) { %><dd><%= tag %></dd><% } %></dl><% } %>
   </header>

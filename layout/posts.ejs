@@ -2,7 +2,7 @@
 <% for (const post of posts) { %>
 <li>
   <a href="<%- post.path %>"><%= post.title %></a>
-  <small><datetime datetime="<%= post.date.toISOString() %>"><%= post.date.toISOString() %></datetime></small>
+  <small><time datetime="<%= post.date.toISOString() %>"><%= post.date.toLocaleDateString() %></time></small>
 </li>
 <% } %>
 </ul>
