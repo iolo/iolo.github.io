@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "fastpress build",
+    "watch": "fastpress watch",
+    "serve": "serve out",
+    "publish": "gh-pages --dist out --nojekyll --cname=iolo.kr"
+  },
+  "devDependencies": {
+    "@iolo/fastpress": "^0.0.2",
+    "gh-pages": "^6.1.1",
+    "serve": "^14.2.3"
+  }
+}
