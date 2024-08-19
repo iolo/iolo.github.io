@@ -68,6 +68,6 @@ permalink: /about/
 </figure>
 
 This site was built with 
+- [Fastpress](https://github.com/iolo/fastpress/)
 - [Github Pages](https://pages.github.com/)
-- [Jekyll](https://github.com/jekyll).
 - [IBM Plex Fonts](https://www.ibm.com/plex/) and [NerdFont Patch](https://www.nerdfonts.com/)
