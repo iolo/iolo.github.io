@@ -3,6 +3,15 @@
   --font-code: '7x12x3', 'IBM Plex Mono', monospace;
 }
 
+@font-face {
+  font-family: '7x12x3';
+  src:
+    url('/assets/font/7x12x3.woff') format('woff'),
+    url('/assets/font/7x12x3.woff2') format('woff2'),
+    url('/assets/font/7x12x3.ttf') format('truetype'),
+    url('/assets/font/7x12x3.otf') format('opentype');
+}
+
 :root.light-theme {
   --bg-color: #fff;
   --text-color: #333;
@@ -17,15 +26,6 @@
   --link-color: #09f;
   --link-active-color: #09f;
   --link-visted-color: #09f;
-}
-
-@font-face {
-  font-family: '7x12x3';
-  src:
-    url('/assets/font/7x12x3.woff') format('woff'),
-    url('/assets/font/7x12x3.woff2') format('woff2'),
-    url('/assets/font/7x12x3.ttf') format('truetype'),
-    url('/assets/font/7x12x3.otf') format('opentype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Sans+KR:wght@100;400;700&display=swap');
@@ -76,6 +76,8 @@ body {
     > h1 {
       background: url('/assets/img/iolo50.png') no-repeat;
       padding-left: 50px;
+      padding-right: 50px;
+      line-height: 50px;
     }
     > nav {
       font-size: 2rem;
