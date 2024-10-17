@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="author" content="" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Jekyll에서 Fastpress로 마이그레이션하기" />
+    <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta property="og:url" content="https://iolo.krhttps://iolo.kr/posts\2024-08-19-jekyll-to-fastpress" />
+    <meta property="og:site_name" content="Quest of Iolo" />
+    <meta property="og:image" content="/assets/img/iolo50.png" />
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="Jekyll에서 Fastpress로 마이그레이션하기" />
+    <meta name="twitter:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="twitter:url" content="https://iolo.krhttps://iolo.kr/posts\2024-08-19-jekyll-to-fastpress" />
+    <meta name="twitter:image:src" content="/assets/img/iolo50.png" />
+    
+    <link rel="canonical" href="https://iolo.krhttps://iolo.kr/posts\2024-08-19-jekyll-to-fastpress" />
+    <link rel="alternate" type="application/rss+xml" href="https://iolo.kr/rss" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/scripts.js" defer></script>
+    <title>Jekyll에서 Fastpress로 마이그레이션하기 - Quest of Iolo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="iolo/iolo.github.io"
+      data-repo-id="R_kgDOH6UEWg"
+      data-category="giscus"
+      data-category-id="DIC_kwDOH6UEWs4CV5Qw"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/" class="nolink">Quest of Iolo</a></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/artifacts">Artifacts</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main><article>
+  <header>
+    <h2>Jekyll에서 Fastpress로 마이그레이션하기</h2>
+    <time datetime="2024-10-17T15:49:36.341Z" pubdate>2024. 10. 18. 오전 12:49:36</time>
+    
+    
+  </header>
+  <section class="post-content">
+  <p>오랜만에 글을 하나 쓸까 싶어서 터미널을 열었는데,
+그 동안 컴터와 OS가 바뀌어서 <a href="https://jekyllrb.com/">Jekyll</a>이 설치되어 있지 않았다.</p>
+<p>습관처럼 rbenv, ruby-build로 시작해서 bundler, jekyll, github-pages...을 설치하려고 했으나...
+역시나 ruby는 한 번에 되는 법이 없다.</p>
+<p>이래저래 삽질하다가 잘 안되서,
+<a href="https://jamstack.org/generators/">요즘은 어떤 정적 사이트 생성기가 대세인가</a> 살펴보려다
+맨 위에 있는 <a href="https://nextjs.org/">Next.js</a>를 보고 흠칫! 놀라서 후다닥! 탭을 닫았다.</p>
+<p>새로 만들까 잠시 고민했지만,
+예전에 만들다만 <a href="https://github.com/iolo/fastpress/">Fastpress</a>를 가져다가 <a href="https://jekyllrb.com/">Jekyll</a> 마이그레이션만 할 수 있도록 대충 뜯어고쳤다.</p>
+<ul>
+<li><p>사이트 소스 준비</p>
+<ul>
+<li>content: 변환될 파일들(.md, .scss 등)</li>
+<li>layout: 레이아웃 파일들(<a href="https://ejs.co/">ejs</a>)</li>
+<li>static: 그냥 복사될 정적 파일들(css, js, img 등)</li>
+<li>config.js: 설정 파일</li>
+</ul>
+</li>
+<li><p>정적 사이트 생성하기</p>
+</li>
+</ul>
+<pre><code class="language-console">$ npx fastpress build
+</code></pre>
+<ul>
+<li>로컬에서 미리보기</li>
+</ul>
+<pre><code class="language-console">$ npx serve out
+</code></pre>
+<ul>
+<li><a href="https://pages.github.com/">GitHub Pages</a> 배포하기</li>
+</ul>
+<pre><code class="language-console">$ npx gh-pages -d out
+</code></pre>
+<p>안녕 <a href="https://jekyllrb.com/">Jekyll</a>... 그동안 고마웠어... 다신 만나지 말자.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>그런데... 무슨 글을 쓰려고 했더라???</p>
+<hr>
+
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <div class="giscus"></div>
+  </footer>
+</article>
+</main>
+    <aside>
+      <input id="themeCheck" type="checkbox">
+    </aside>
+    <footer>
+      <small>&copy; 1973-2024 IoloTheBard. All rights reserved.</small>
+    </footer>
+    <script>hljs.configure({languages:[]});hljs.highlightAll();</script>
+  </body>
+</html>
