@@ -1,6 +1,7 @@
 ---
 title: Jekyll에서 Fastpress로 마이그레이션하기
 layout: post
+date: 2024-08-19
 ---
 
 오랜만에 글을 하나 쓸까 싶어서 터미널을 열었는데,

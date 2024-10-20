@@ -1,6 +1,7 @@
 ---
 title: giscus를 붙이면서
 layout: post
+date: 2023-04-19
 ---
 
 유행따라 삼만리... 요즘 유행한다는 [giscus](https://giscus.app/)를 붙였다.

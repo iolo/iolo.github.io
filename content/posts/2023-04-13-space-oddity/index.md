@@ -1,5 +1,7 @@
 ---
 title: Space Oddity
+layout: post
+date: 2023-04-13
 ---
 
 [David Bowie - Space Oddity](https://youtu.be/iYYRH4apXDo)

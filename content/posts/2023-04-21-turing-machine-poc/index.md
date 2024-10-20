@@ -1,6 +1,7 @@
 ---
 title: 튜링 머신 에뮬레이터 with chatGPT
 layout: post
+date: 2023-04-21
 ---
 
 [chatGPT](https://chat.openai.com/)와 컴퓨터의 탄생에 대해서 수다를 떨다가 [튜링 머신](https://en.wikipedia.org/wiki/Turing_machine) 얘기가 나오길래...
