@@ -36,7 +36,7 @@ title: Artifacts
 
 ### fonts
 
-- [7x12-fonts](7x12-fonts) : TrueType and Web Fonts based on 7x14 Bitmap Font for Apple II
+- [7x12-fonts](/7x12-fonts) : TrueType and Web Fonts based on 7x12 Bitmap Fonts for Apple II
 - [call3327-fonts](/call3327-fonts) : TrueType and Web Fonts from `CALL 3327` Korean Program for Apple II
 - ...
 

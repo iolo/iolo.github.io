@@ -28,7 +28,7 @@
     <% if (site.google_site_verification) { %>
     <meta name="google-site-verification" content="<%= site.google_site_verification %>" />
     <% } %>
-    <link rel="canonical" href="<%= site.url %><%= page.url?.replace('index.html','') %>" />
+    <link rel="canonical" href="<%= page.url || site.url %>" />
     <link rel="alternate" type="application/rss+xml" href="<%= site.url %>/rss" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <script src="/assets/js/scripts.js" defer></script>
