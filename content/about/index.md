@@ -17,7 +17,7 @@ permalink: /about/
 
 ## Experiences
 
-- 2022.06- Founder & Solitary Programmer, [SooSooTech](https://soosoo.tech/)
+- 2023.06- Founder & Solitary Programmer, [SooSooTech](https://soosoo.tech/)
 - 2018.08-2023.04 CTO, [Fastcampus](https://fastcampus.co.kr/), became [Day1 Company](https://day1company.co.kr/)
   - [Fastcampus](https://fastcampus.co.kr/): online/offline/mixed education services for personal customers
   - [Fastcampus for Business](https://fastcampus.app/): online education services for enterprise customers
@@ -57,10 +57,11 @@ permalink: /about/
 
 ## and You can find me on:
 
-- [GitHub](https://github.com/iolo)
+- [GitHub](https://github.com/iolo/)
 - [LinkedIn](https://www.linkedin.com/in/iolothebard/)
 - [Facebook](https://www.facebook.com/iolothebard/)
-- [Twitter](https://twitter.com/iolothebard)
+- [Twitter](https://twitter.com/iolothebard/)
+- [YouTube](https://youtube.com/@iolo6502/)
 - or somewhere in [Jeju island](https://goo.gl/maps/zGWvqxtDfwZUpH6m9)
 
 <figure>
@@ -71,4 +72,4 @@ permalink: /about/
 This site was built with 
 - [Fastpress](https://github.com/iolo/fastpress/)
 - [Github Pages](https://pages.github.com/)
-- [IBM Plex Fonts](https://www.ibm.com/plex/) and [NerdFont Patch](https://www.nerdfonts.com/)
+- [7x14 Fonts](https://github.com/iolo/7x14-fonts/)
