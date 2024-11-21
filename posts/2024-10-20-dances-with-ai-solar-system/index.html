@@ -6,6 +6,8 @@
     <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
     <meta name="author" content="" />
     
+    <meta name="keywords" content="ai,javascript" />
+    
     <meta property="og:type" content="article" />
     <meta property="og:title" content="AI와 함께 춤을 - 태양계편" />
     <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
@@ -59,13 +61,12 @@
     <h2>AI와 함께 춤을 - 태양계편</h2>
     <time datetime="2024-10-20T00:00:00.000Z" pubdate>2024. 10. 20. 오전 9:00:00</time>
     
-    
+    <dl><dt>tags</dt><dd>ai</dd><dd>javascript</dd></dl>
   </header>
   <section class="post-content">
   <p>웹 서핑을 하다가... 문득... AI로 그림책 같은걸 만들어보면 좋겠다는 생각이 들었다.</p>
 <p><a href="https://claude.ai">Claude.ai</a>로 태양계 그림책을 만들기 시작했다. 명왕성을 뺏길래... 불쌍하니 넣어달라고 했다. 마지막 페이지에서 태양계 전체를 조망하는 그림이 있으면 좋겠다고 했더니... 어랏! 이 녀석이 뜬금없이 svg 코드를 뱉어내는거다.</p>
 <p>Claude 3.5 Sonnet이 그린 태양계 그림:</p>
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
   <!-- 태양 -->
   <circle cx="50" cy="200" r="40" fill="yellow"/>
@@ -81,23 +82,22 @@
   <circle cx="50" cy="200" r="450" fill="none" stroke="#ddd" stroke-width="1"/>
   
   <!-- 행성들 -->
-  <circle cx="110" cy="200" r="5" fill="brown"/> <!-- 수성 -->
+<p>  <circle cx="110" cy="200" r="5" fill="brown"/> <!-- 수성 -->
   <circle cx="140" cy="200" r="8" fill="orange"/> <!-- 금성 -->
   <circle cx="170" cy="200" r="9" fill="blue"/> <!-- 지구 -->
   <circle cx="210" cy="200" r="7" fill="red"/> <!-- 화성 -->
   <circle cx="270" cy="200" r="20" fill="sandybrown"/> <!-- 목성 -->
   <circle cx="350" cy="200" r="17" fill="goldenrod"/> <!-- 토성 -->
   <circle cx="430" cy="200" r="12" fill="lightblue"/> <!-- 천왕성 -->
-  <circle cx="500" cy="200" r="11" fill="blue"/> <!-- 해왕성 -->
+  <circle cx="500" cy="200" r="11" fill="blue"/> <!-- 해왕성 --></p>
   <!-- 명왕성 (작은 점으로 표시) -->
   <circle cx="550" cy="200" r="3" fill="gray"/>
   
   <!-- 레이블 -->
-  <text x="50" y="260" text-anchor="middle" font-size="12">태양</text>
+<p>  <text x="50" y="260" text-anchor="middle" font-size="12">태양</text>
   <text x="500" y="260" text-anchor="middle" font-size="12">해왕성</text>
   <text x="550" y="260" text-anchor="middle" font-size="12">명왕성</text>
-</svg>
-
+</svg></p>
 <p>내 의도에는 벗어난거지만, 시작한 김에 자바스크립트로 공전시켜달라고 했니니, 꽤 그럴듯하게 만들어 준다. 공전주기 짧은 혜성 하나 넣어달라고 했더니 군말없이 해주네! 몇가지 세부 조정을 하고 보니, 명왕성이 멀뚱한 느낌... 애초에 스케일에 안맞는 녀석을 넣어달라고 한 내 잘못이니... 명왕성은 다시 빼달라고 했다.</p>
 <p>실행 결과:
 <a href="https://claude.site/artifacts/09210cb7-392b-4f6f-8c87-e075dafeae6d">https://claude.site/artifacts/09210cb7-392b-4f6f-8c87-e075dafeae6d</a></p>
