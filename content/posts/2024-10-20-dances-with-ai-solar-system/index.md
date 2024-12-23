@@ -2,6 +2,7 @@
 title: AI와 함께 춤을 - 태양계편
 layout: post
 date: 2024-10-20
+tags: [ai,javascript]
 ---
 웹 서핑을 하다가... 문득... AI로 그림책 같은걸 만들어보면 좋겠다는 생각이 들었다.
 

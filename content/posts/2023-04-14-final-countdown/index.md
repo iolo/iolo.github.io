@@ -2,6 +2,7 @@
 title: Final Countdown
 layout: post
 date: 2023-04-14
+tags: [test]
 ---
 
 [Europe - Final Countdown](https://youtu.be/9jK-NcRmVcw)
