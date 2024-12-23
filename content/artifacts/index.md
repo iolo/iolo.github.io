@@ -2,8 +2,13 @@
 title: Artifacts
 ---
 
+### publications
+
+- [개발자 원칙](https://product.kyobobook.co.kr/detail/S000200381165), 2022, 골든래빗
+
 ### presentations
 
+- [고전적인 기술로 현대적인 웹앱 만들기 : HTMX](https://www.slideshare.net/slideshow/htmx-2024/274315966) Dec. 2024
 - [개인정보를 피해갈 수 없는 개발자를 위한 안내서](https://www.slideshare.net/slideshow/ss-ef1c/272333739) Aug. 2024
 - [AI 시대를 준비하는 개발자를 위한 안내서](https://www.slideshare.net/slideshow/ai-ai-2d08/270030962) Mar. 2024
 - [(면접에 자주 나오는) HTTP : 브라우저에서 서버까지](https://www.slideshare.net/slideshow/http-pdf/251903851) Jun. 2022
