@@ -6,8 +6,8 @@
     "publish": "gh-pages --dist out --nojekyll --cname=iolo.kr"
   },
   "devDependencies": {
-    "@iolo/fastpress": "^0.0.2",
-    "gh-pages": "^6.1.1",
-    "serve": "^14.2.3"
+    "@iolo/fastpress": "^0.0.3",
+    "gh-pages": "^6.2.0",
+    "serve": "^14.2.4"
   }
 }

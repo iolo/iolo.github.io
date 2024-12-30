@@ -1,8 +1,17 @@
-<ul>
-<% for (const post of posts.sort((a, b)=>(b.date - a.date))) { %>
-<li>
-  <a href="<%- post.path %>"><%= post.title %></a>
-  <small><time datetime="<%= post.date.toISOString() %>"><%= post.date.toLocaleDateString() %></time></small>
-</li>
-<% } %>
-</ul>
+<article>
+    <header>
+        <h2>Posts</h2>
+    </header>
+    <section>
+        <ul>
+            <% for (const post of posts.sort((a, b) => (b.date - a.date))) { %>
+                <li>
+                    <a href="<%- post.path %>"><%= post.title %></a>
+                    <small>
+                        <time datetime="<%= post.date.toISOString() %>"><%= post.date.toLocaleDateString() %></time>
+                    </small>
+                </li>
+            <% } %>
+        </ul>
+    </section>
+</article>

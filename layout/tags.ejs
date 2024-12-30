@@ -1,0 +1,24 @@
+<article>
+    <header>
+        <h2>Tags</h2>
+    </header>
+    <ul>
+        <% for (const [tag, posts] of Object.entries(tags)) { %>
+            <li>
+                <section>
+                    <h3><a href="/tags/<%= tag %>"><%= tag %></a></h3>
+                    <ul>
+                        <% for (const post of posts) { %>
+                            <li>
+                                <a href="<%- post.path %>"><%= post.title %></a>
+                                <small>
+                                    <time datetime="<%= post.date.toISOString() %>"><%= post.date.toLocaleDateString() %></time>
+                                </small>
+                            </li>
+                        <% } %>
+                    </ul>
+                </section>
+            </li>
+        <% } %>
+    </ul>
+</article>
