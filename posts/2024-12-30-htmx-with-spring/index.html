@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="author" content="" />
+    
+    <meta name="keywords" content="htmx,spring" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Spring Boot + Thymeleaf + HTMX" />
+    <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta property="og:url" content="https://iolo.krhttps://iolo.kr/posts\2024-12-30-htmx-with-spring" />
+    <meta property="og:site_name" content="Quest of Iolo" />
+    <meta property="og:image" content="/assets/img/iolo50.png" />
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="Spring Boot + Thymeleaf + HTMX" />
+    <meta name="twitter:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="twitter:url" content="https://iolo.krhttps://iolo.kr/posts\2024-12-30-htmx-with-spring" />
+    <meta name="twitter:image:src" content="/assets/img/iolo50.png" />
+    
+    <link rel="canonical" href="https://iolo.kr/posts\2024-12-30-htmx-with-spring" />
+    <link rel="alternate" type="application/rss+xml" href="https://iolo.kr/rss" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/scripts.js" defer></script>
+    <title>Spring Boot + Thymeleaf + HTMX - Quest of Iolo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="iolo/iolo.github.io"
+      data-repo-id="R_kgDOH6UEWg"
+      data-category="giscus"
+      data-category-id="DIC_kwDOH6UEWs4CV5Qw"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/" class="nolink">Quest of Iolo</a></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/artifacts">Artifacts</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main><article>
+  <header>
+    <h2>Spring Boot + Thymeleaf + HTMX</h2>
+    <time datetime="2024-12-30T00:00:00.000Z" pubdate>2024. 12. 30. 오전 9:00:00</time>
+    
+    <!--
+    <dl><dt>tags</dt><dd>htmx</dd><dd>spring</dd></dl>
+    -->
+  </header>
+  <section class="post-content">
+  <p>지난 <a href="https://jejuweb.kr/">2024 제주 웹 컨퍼런스</a> 발표 당일,
+근처의 스타벅스에서 발표 자료를 마무리하다가
+너무 허접 T.T 간단한 데모라도 넣어야겠다 싶어서
+제일 만만한 <a href="https://start.spring.io/#!type=gradle-project&language=java&platformVersion=3.4.1&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=htmx">Spring Initializr</a>를 열었는데...</p>
+<p>어라랏! 방금 just now! HTMX 지원이 추가된거다!!</p>
+<p><img src="htmx-spring-boot.png" alt=""></p>
+<p>핵심은 <a href="https://github.com/wimdeblauwe/htmx-spring-boot/">htmx-spring-boot</a> 모듈이다.</p>
+<ul>
+<li>스프링 웹 컨트롤러에 쓸 수 있는 애너테이션들과 뷰 클래스들,</li>
+<li>스프링 시큐리티에 쓸 수 있는 인증 클래스(AuthenticationEntrypoint),</li>
+<li><a href="https://www.thymeleaf.org/">Thymeleaf</a>에 쓸 수 있는 커스템 속성들(Dialect)</li>
+</ul>
+<p>후다닥 화면 녹화 영상을 만들었다:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RxkdfzCWyYI?si=SGJV1KMQ00jBxrGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>백엔드는 JSON 응답만 내뱉는 존재로 전락한지 오래고...
+스프링 부트는 처음부터 JSP 없는 톰캣을 내장했고,
+<a href="https://velocity.apache.org/">Velocity</a>는 오래전에 스프링 지원 목록에서 빠졌고,
+서버 사이드 템플릿(Thymeleaf, Jinja2, Mustache, ...)을 쓴다고 하면 구닥다리 레거시 고인물 취급받는 시대에...
+하이퍼텍스트고 나발이고 다 부질없는 소리겠지만...</p>
+<p>봄날은 생각보다 오래 가더라... </p>
+
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <div class="giscus"></div>
+  </footer>
+</article>
+</main>
+    <aside>
+      <input id="themeCheck" type="checkbox">
+    </aside>
+    <footer>
+      <small>&copy; 1973-2024 IoloTheBard. All rights reserved.</small>
+    </footer>
+    <script>hljs.configure({languages:[]});hljs.highlightAll();</script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="author" content="" />
+    
+    <meta name="keywords" content="htmx,hx" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Make HyperText Great Again! - HX" />
+    <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta property="og:url" content="https://iolo.krhttps://iolo.kr/posts\2024-12-28-hx" />
+    <meta property="og:site_name" content="Quest of Iolo" />
+    <meta property="og:image" content="/assets/img/iolo50.png" />
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="Make HyperText Great Again! - HX" />
+    <meta name="twitter:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="twitter:url" content="https://iolo.krhttps://iolo.kr/posts\2024-12-28-hx" />
+    <meta name="twitter:image:src" content="/assets/img/iolo50.png" />
+    
+    <link rel="canonical" href="https://iolo.kr/posts\2024-12-28-hx" />
+    <link rel="alternate" type="application/rss+xml" href="https://iolo.kr/rss" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/scripts.js" defer></script>
+    <title>Make HyperText Great Again! - HX - Quest of Iolo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="iolo/iolo.github.io"
+      data-repo-id="R_kgDOH6UEWg"
+      data-category="giscus"
+      data-category-id="DIC_kwDOH6UEWs4CV5Qw"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/" class="nolink">Quest of Iolo</a></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/artifacts">Artifacts</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main><article>
+  <header>
+    <h2>Make HyperText Great Again! - HX</h2>
+    <time datetime="2024-12-28T00:00:00.000Z" pubdate>2024. 12. 28. 오전 9:00:00</time>
+    
+    <!--
+    <dl><dt>tags</dt><dd>htmx</dd><dd>hx</dd></dl>
+    -->
+  </header>
+  <section class="post-content">
+  <p><a href="https://htmx.org/">HTMX</a> 라이브러리 자체는 전혀 새로울게 없었지만,
+몇가지 추가적인 속성(<code>hx-get</code>, <code>hx-target</code>, <code>hx-select</code>, <code>hx-swap</code>)을 통해 HyperText 시맨틱을 유지하면서 &#39;페이지 부분 갱신&#39;을 지원한다는 아이디어는 솔깃했다.</p>
+<p>그래서, 핵심적인 아이디어만 직접 구현해보았다. 보다시피 전체 소스가 1.5K도 안된다:</p>
+<pre><code class="language-js">(function (w, d) {
+  const METHODS = [&#39;GET&#39;, &#39;POST&#39;, &#39;PUT&#39;, &#39;DELETE&#39;, &#39;PATCH&#39;];
+  const DEF_TRIGGER_BY_TAG = {
+    FORM: &#39;submit&#39;,
+    INPUT: &#39;change&#39;,
+    TEXTAREA: &#39;change&#39;,
+  };
+  const DEF_TRIGGER = &#39;click&#39;;
+  const root = d.body;
+  function getHxRequestAttrs(el) {
+    const attrs = {
+      trigger: el.getAttribute(&#39;hx-trigger&#39;) || DEF_TRIGGER_BY_TAG[el.tagName] || DEF_TRIGGER,
+      method: &#39;GET&#39;,
+      url: w.location.href,
+      target: d.querySelector(el.getAttribute(&#39;hx-target&#39;)) || el,
+      select: el.getAttribute(&#39;hx-select&#39;),
+      swap: el.getAttribute(&#39;hx-swap&#39;) || &#39;innerHTML&#39;,
+    };
+    for (const method of METHODS) {
+      const url = el.getAttribute(&#39;hx-&#39; + method);
+      if (url) {
+        attrs.method = method;
+        attrs.url = url;
+      }
+    }
+    return attrs;
+  }
+  const els = root.querySelectorAll(&#39;[hx-trigger],[hx-get],[hx-post],[hx-put],[hx-delete],[hx-patch]&#39;);
+  for (const el of els) {
+    const { trigger, method, url, target, select, swap } = getHxRequestAttrs(el);
+    el.addEventListener(trigger, function (ev) {
+      ev.preventDefault();
+      fetch(url, { method, headers: { &#39;hx-request&#39;: true } })
+        .then((response) =&gt; response.text())
+        .then((html) =&gt; {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, &#39;text/html&#39;);
+          target[swap] = doc.querySelector(select || &#39;body&#39;).innerHTML;
+        });
+    });
+  }
+})(window, document);
+</code></pre>
+<p>이름 짓기도 귀찮아서 <a href="https://github.com/iolo/hx/">hx</a> - HTMX의 커스텀 속성 접두어다.
+사용법은... README.md에도 써놓았고, 간단한 예제까지 만들어 두었다.</p>
+<p>사소하지만 바꾸고 싶은 것들이 몇가지 있는데...</p>
+<ul>
+<li><code>hx-get/post/...</code> 속성은 <code>hx-method=&quot;get&quot; hx-href=&quot;...&quot;</code> 처럼 두 개의 속성으로 분리</li>
+<li><code>hx-swap</code> 속성은 <code>hx-replace</code></li>
+<li>HTML 속성 접두어는 <code>hx</code>인데, DOM 이벤트와 CSS 접두어는 <code>htmx</code>? 조금 길더라도 그냥 <code>htmx</code>!</li>
+</ul>
+<p>시각효과, 지연, 쓰로틀링 같은 문법 사탕들을 제거하고,
+핵심적인 속성만 HTML 표준에 추가된다면 쓸모가 많을 듯.</p>
+<p>May the <strong>SOURCE</strong> be with you...</p>
+
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <div class="giscus"></div>
+  </footer>
+</article>
+</main>
+    <aside>
+      <input id="themeCheck" type="checkbox">
+    </aside>
+    <footer>
+      <small>&copy; 1973-2024 IoloTheBard. All rights reserved.</small>
+    </footer>
+    <script>hljs.configure({languages:[]});hljs.highlightAll();</script>
+  </body>
+</html>
