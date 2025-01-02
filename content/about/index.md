@@ -49,7 +49,7 @@ permalink: /about/
 - Hadoop, HBase, Spark and Elasticsearch for Log Pipelines
 - Android, iOS, and Hybrid for Mobile App Development
 - Swing, SWT, Eclipse RCP for Java Desktop Application Development
-- GTK, Motif for Linux Desktop Application Application Development
+- GTK, Motif for Linux Desktop Application Development
 - MFC, Win32, DirectX for Windows Desktop Application Development
 - and...
 - APPLE ][+ BASIC, 6502 Assembly, UCSD Pascal, Turbo Pascal, BDS-C, ...
@@ -72,4 +72,4 @@ permalink: /about/
 This site was built with 
 - [Fastpress](https://github.com/iolo/fastpress/)
 - [Github Pages](https://pages.github.com/)
-- [7x14 Fonts](https://github.com/iolo/7x14-fonts/)
+- [7x12 Fonts](https://github.com/iolo/7x12-fonts/)
