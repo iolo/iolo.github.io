@@ -14,6 +14,8 @@
 
 :root.light-theme {
   --bg-color: #fff;
+  --bg2-color: #ccc;
+  --text2-color: #666;
   --text-color: #333;
   --link-color: #07c;
   --link-active-color: #07c;
@@ -22,6 +24,8 @@
 
 :root.dark-theme {
   --bg-color: #333;
+  --bg2-color: #666;
+  --text2-color: #ccc;
   --text-color: #fff;
   --link-color: #09f;
   --link-active-color: #09f;
@@ -40,12 +44,13 @@
 html, body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-size: 62.5%; /* 10px = 10px / browser default(16px) = 62.5% */
 }
 
 pre, code, tt, kbd {
-  font-family: var(--font-code);
+  background-color: var(--bg2-color);
+  font-family: var(--font-code), monospace;
 }
 
 

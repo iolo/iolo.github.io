@@ -17,7 +17,9 @@ HTMX는 작년에 [조쉬 롱의 라이브 코딩 영상 - HTMX and Spring Boot]
 웹의 역사를 통해 HTMX의 등장 배경을 설명하고,
 구체적인 사용법은 간단히 소개만 하는 발표 자료를 만들었다:
 
+<figure>
 <iframe src="https://www.slideshare.net/slideshow/embed_code/key/lWN7TRUItggKU6?startSlide=1" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;" allowfullscreen></iframe>
+</figure>
 
 HTMX는 나온지 10년이 넘은 **중고신인**이다.
 '페이지 부분 갱신'도 [jQuery.load](https://api.jquery.com/load/)를 통해 널리 쓰이던 AJAX 패턴이라 새로울 게 없다.

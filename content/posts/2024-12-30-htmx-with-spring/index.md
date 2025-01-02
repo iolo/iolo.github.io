@@ -12,7 +12,9 @@ tags: [htmx,spring]
 
 어라랏! 방금 just now! HTMX 지원이 추가된거다!!
 
-![](/files/htmx-spring-boot.png)
+<figure>
+<img src="/files/htmx-spring-boot.png">
+</figure>
 
 핵심은 [htmx-spring-boot](https://github.com/wimdeblauwe/htmx-spring-boot/) 모듈이다.
 
@@ -22,7 +24,9 @@ tags: [htmx,spring]
 
 후다닥 화면 녹화 영상을 만들었다:
 
+<figure>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RxkdfzCWyYI?si=SGJV1KMQ00jBxrGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</figure>
 
 백엔드는 JSON 응답만 내뱉는 존재로 전락한지 오래고...
 스프링 부트는 처음부터 JSP 없는 톰캣을 내장했고,
