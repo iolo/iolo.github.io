@@ -3,12 +3,42 @@ title: Make HyperText Great Again! - HX
 layout: post
 date: 2024-12-28
 tags: [htmx,hx]
+icon: /files/hx-spiderman.png
 ---
 
 [HTMX](https://htmx.org/) 라이브러리 자체는 전혀 새로울게 없었지만,
-몇가지 추가적인 속성(`hx-get`, `hx-target`, `hx-select`, `hx-swap`)을 통해 HyperText 시맨틱을 유지하면서 '페이지 부분 갱신'을 지원한다는 아이디어는 솔깃했다.
+몇가지 추가적인 속성(`hx-get`, `hx-target`, `hx-select`, ...)을 통해
+HyperText 시맨틱을 유지하면서 **페이지 부분 갱신** 지원한다는 아이디어는 솔깃했다.
 
-그래서, 핵심적인 아이디어만 직접 구현해보았다. 보다시피 전체 소스가 1.5K도 안된다:
+간단한 예를 보면:
+```html
+<a href="/get" hx-get="/get" hx-target="#result" hx-select="#result">Get!</a>
+<div id="result"></div>
+```
+
+자바스크립트를 쓸 수 있는 브라우저에서는
+   1. `hx-get` 속성의 이름과 값에 따라, `GET /get` AJAX 요청을 보내고
+   2. `hx-select` 속성에 따라, AJAX 응답(HTML)에서 `#result` 요소를 선택해서
+   3. `hx-target` 속성에 따라, 현재 페이지의 `#result` 요소를 교체한다.
+
+자바스크립트를 쓸 수 없는 브라우저에서는
+`hx-*` 속성들을 무시되고, 일반적인 `<a>` 태그처럼 `GET /get`(`href` 속성)의 응답으로 전체 페이지가 교체된다.
+
+폼 POST의 예를 보면:
+
+```html
+<form method="post" action="/post"
+      hx-post="/post" hx-target="#result" hx-select="#result">
+  <button type="submit">Post!</button>
+</form>
+<div id="result"></div>
+```
+
+`hx-post` 속성의 이름과 값에 따라, `POST /post` AJAX 요청을 보낸다는 것만 빼면 위와 같다.
+
+HTMLX에 추가된 여러가지 편리하지만 구질구질한 문법 설탕들을 제거하고,
+핵심적인 아이디어만 직접 구현해보았다.
+보다시피 전체 소스가 1.5K도 안된다:
 
 ```js
 (function (w, d) {
@@ -65,5 +95,10 @@ tags: [htmx,hx]
 
 시각효과, 지연, 쓰로틀링 같은 문법 사탕들을 제거하고,
 핵심적인 속성만 HTML 표준에 추가된다면 쓸모가 많을 듯.
+
+<figure>
+  <img src="/files/hx-spiderman.png">
+  <figcaption>Make HyperText Great Again! - HX</figcaption>
+</figure>
 
 May the **SOURCE** be with you...

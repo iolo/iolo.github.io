@@ -12,7 +12,7 @@ tags: [htmx,spring]
 
 어라랏! 방금 just now! HTMX 지원이 추가된거다!!
 
-![](htmx-spring-boot.png)
+![](/files/htmx-spring-boot.png)
 
 핵심은 [htmx-spring-boot](https://github.com/wimdeblauwe/htmx-spring-boot/) 모듈이다.
 
