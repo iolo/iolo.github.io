@@ -36,7 +36,7 @@ HyperText 시맨틱을 유지하면서 **페이지 부분 갱신** 지원한다�
 
 `hx-post` 속성의 이름과 값에 따라, `POST /post` AJAX 요청을 보낸다는 것만 빼면 위와 같다.
 
-HTMLX에 추가된 여러가지 편리하지만 구질구질한 문법 설탕들을 제거하고,
+HTMX에 추가된 여러가지 편리하지만 구질구질한 문법 설탕들을 제거하고,
 핵심적인 아이디어만 직접 구현해보았다.
 보다시피 전체 소스가 1.5K도 안된다:
 
@@ -91,7 +91,7 @@ HTMLX에 추가된 여러가지 편리하지만 구질구질한 문법 설탕들
 사소하지만 바꾸고 싶은 것들이 몇가지 있는데...
 - `hx-get/post/...` 속성은 `hx-method="get" hx-href="..."` 처럼 두 개의 속성으로 분리
 - `hx-swap` 속성은 `hx-replace`
-- HTML 속성 접두어는 `hx`인데, DOM 이벤트와 CSS 접두어는 `htmx`? 조금 길더라도 그냥 `htmx`!
+- HTML 속성 접두어는 `hx`인데, DOM 이벤트와 CSS 접두어는 `htmx`? `hx`든 `htmx`든 하나만!
 
 시각효과, 지연, 쓰로틀링 같은 문법 사탕들을 제거하고,
 핵심적인 속성만 HTML 표준에 추가된다면 쓸모가 많을 듯.
@@ -101,4 +101,4 @@ HTMLX에 추가된 여러가지 편리하지만 구질구질한 문법 설탕들
   <figcaption>Make HyperText Great Again! - HX</figcaption>
 </figure>
 
-May the **SOURCE** be with you...
+May the **HyperText** be with you...
