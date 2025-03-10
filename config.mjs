@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   site: {
     url: 'https://iolo.kr',
     title: 'Quest of Iolo',
