@@ -42,6 +42,7 @@ title: Artifacts
 - [apple2-picture-books](/apple2-picture-books) : Applesoft Basic Program for Picture Books
 - [call3327](/call3327) : Restoration of `CALL 3327` Korean Program for Apple II
 - [apple2-tl1](/apple2-tl1) : Restoration of Apple II TL/1 Compiler and Runtime
+- [fc-av-mod](https://github.com/iolo/fc-av-mod) : Yet another Famicom AV mod with Power LED and USB Power.
 - [esp8266-wifi-modem](https://github.com/iolo/esp8266-wifi-modem) : ESP8266 WiFi Modem for Apple II with Super Serial Card
 - [sun-type6-keyboard](https://github.com/iolo/sun-type6-keyboard) : USB Converter for Sun Type 6 Keyboard
 - [x2kbd](https://github.com/iolo/x2kbd) : PS/2 Converter for MSX X-2(CPC-400) Keyboard
