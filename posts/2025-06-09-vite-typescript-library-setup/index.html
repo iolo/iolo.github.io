@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="author" content="" />
+    
+    <meta name="keywords" content="vite,typescript" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Vite Typescript Library Setup" />
+    <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta property="og:url" content="https://iolo.krhttps://iolo.kr/posts\2025-06-09-vite-typescript-library-setup" />
+    <meta property="og:site_name" content="Quest of Iolo" />
+    <meta property="og:image" content="/assets/img/iolo50.png" />
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="Vite Typescript Library Setup" />
+    <meta name="twitter:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="twitter:url" content="https://iolo.krhttps://iolo.kr/posts\2025-06-09-vite-typescript-library-setup" />
+    <meta name="twitter:image:src" content="/assets/img/iolo50.png" />
+    
+    <link rel="canonical" href="https://iolo.kr/posts\2025-06-09-vite-typescript-library-setup" />
+    <link rel="alternate" type="application/rss+xml" href="https://iolo.kr/rss" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/scripts.js" defer></script>
+    <title>Vite Typescript Library Setup - Quest of Iolo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="iolo/iolo.github.io"
+      data-repo-id="R_kgDOH6UEWg"
+      data-category="giscus"
+      data-category-id="DIC_kwDOH6UEWs4CV5Qw"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/" class="nolink">Quest of Iolo</a></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/artifacts">Artifacts</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main><article>
+  <header>
+    <h2>Vite Typescript Library Setup</h2>
+    <time datetime="2025-06-09T03:26:55.201Z" pubdate>2025. 6. 9. 오후 12:26:55</time>
+    
+    <!--
+    <dl><dt>tags</dt><dd>vite</dd><dd>typescript</dd></dl>
+    -->
+  </header>
+  <section class="post-content">
+  <h1>Vite TypeScript Library Setup</h1>
+<p>A complete setup for creating TypeScript libraries that work in Node.js (CommonJS/ESM), browsers (UMD), and bundlers (ESM) with proper type declarations.</p>
+<h2>Key Requirements</h2>
+<ul>
+<li>Support <code>require()</code> in Node.js CommonJS</li>
+<li>Support <code>import</code> in Node.js ESM  </li>
+<li>Support <code>&lt;script src=&quot;...&quot;&gt;</code> in browsers</li>
+<li>Support <code>import</code> in browser <code>&lt;script type=&quot;module&quot;&gt;</code></li>
+<li>Support <code>import</code> with bundlers (Vite, Webpack, etc.)</li>
+<li><strong>Proper TypeScript declarations</strong> for all environments</li>
+</ul>
+<h2>Essential Files</h2>
+<h3>1. package.json</h3>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;my-library&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;files&quot;: [&quot;dist&quot;],
+  &quot;main&quot;: &quot;./dist/my-library.cjs&quot;,
+  &quot;module&quot;: &quot;./dist/my-library.js&quot;, 
+  &quot;browser&quot;: &quot;./dist/my-library.umd.cjs&quot;,
+  &quot;types&quot;: &quot;./dist/index.d.ts&quot;,
+  &quot;exports&quot;: {
+    &quot;.&quot;: {
+      &quot;import&quot;: {
+        &quot;types&quot;: &quot;./dist/index.d.ts&quot;,
+        &quot;default&quot;: &quot;./dist/my-library.js&quot;
+      },
+      &quot;require&quot;: {
+        &quot;types&quot;: &quot;./dist/index.d.ts&quot;, 
+        &quot;default&quot;: &quot;./dist/my-library.cjs&quot;
+      },
+      &quot;browser&quot;: {
+        &quot;types&quot;: &quot;./dist/index.d.ts&quot;,
+        &quot;default&quot;: &quot;./dist/my-library.umd.cjs&quot;
+      }
+    }
+  },
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;vite build&quot;,
+    &quot;dev&quot;: &quot;vite build --watch&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@types/node&quot;: &quot;^22.15.30&quot;,
+    &quot;typescript&quot;: &quot;^5.8.3&quot;,
+    &quot;vite&quot;: &quot;^6.0.0&quot;,
+    &quot;vite-plugin-dts&quot;: &quot;^4.3.0&quot;
+  }
+}
+</code></pre>
+<h3>2. vite.config.ts</h3>
+<pre><code class="language-typescript">import { defineConfig } from &#39;vite&#39;;
+import { resolve } from &#39;path&#39;;
+import dts from &#39;vite-plugin-dts&#39;;
+
+export default defineConfig({
+  plugins: [
+    dts({
+      include: &#39;src/**/*&#39;,
+      exclude: &#39;src/**/*.(spec|test).(js|ts)&#39;,
+      rollupTypes: true,  // 🔑 KEY: Bundle all types into single file
+      outDir: &#39;dist&#39;,
+    }),
+  ],
+  build: {
+    lib: {
+      entry: resolve(__dirname, &#39;src/index.ts&#39;),
+      name: &#39;MyLibrary&#39;,  // Global variable name for UMD
+      fileName: &#39;my-library&#39;,
+      formats: [&#39;es&#39;, &#39;cjs&#39;, &#39;umd&#39;],
+    },
+    rollupOptions: {
+      external: [],  // Add external deps here if needed
+      output: {
+        exports: &#39;named&#39;,
+      },
+    },
+  },
+});
+</code></pre>
+<h3>3. tsconfig.json</h3>
+<pre><code class="language-json">{
+  &quot;compilerOptions&quot;: {
+    &quot;target&quot;: &quot;es2020&quot;,
+    &quot;module&quot;: &quot;esnext&quot;, 
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;declaration&quot;: true,
+    &quot;outDir&quot;: &quot;dist&quot;,
+    &quot;strict&quot;: true,
+    &quot;esModuleInterop&quot;: true,
+    &quot;skipLibCheck&quot;: true,
+    &quot;forceConsistentCasingInFileNames&quot;: true
+  },
+  &quot;include&quot;: [&quot;src/**/*.ts&quot;],
+  &quot;exclude&quot;: [&quot;node_modules&quot;, &quot;dist&quot;, &quot;**/*.spec.ts&quot;, &quot;**/*.test.ts&quot;]
+}
+</code></pre>
+<h2>Critical Configuration Points</h2>
+<h3>🔑 <code>rollupTypes: true</code></h3>
+<p><strong>THE KEY SETTING</strong> - Without this:</p>
+<ul>
+<li>❌ Generates separate <code>.d.ts</code> files maintaining directory structure</li>
+<li>❌ Need complex package.json exports like <code>&quot;./types&quot;: &quot;./dist/types/index.d.ts&quot;</code>  </li>
+<li>❌ Users import with <code>import type { Type } from &#39;my-library/types&#39;</code></li>
+</ul>
+<p><strong>With <code>rollupTypes: true</code>:</strong></p>
+<ul>
+<li>✅ All types bundled into single <code>dist/index.d.ts</code></li>
+<li>✅ Simple package.json with just <code>&quot;types&quot;: &quot;./dist/index.d.ts&quot;</code></li>
+<li>✅ Clean imports: <code>import type { Type } from &#39;my-library&#39;</code></li>
+</ul>
+<h3>Export Order in package.json</h3>
+<pre><code class="language-json">&quot;exports&quot;: {
+  &quot;.&quot;: {
+    &quot;import&quot;: { ... },    // Modern ESM first
+    &quot;require&quot;: { ... },   // CommonJS second  
+    &quot;browser&quot;: { ... },   // Most specific last
+  }
+}
+</code></pre>
+<h3>File Extensions</h3>
+<ul>
+<li>ESM: <code>.js</code> (because <code>&quot;type&quot;: &quot;module&quot;</code>)</li>
+<li>CommonJS: <code>.cjs</code> </li>
+<li>UMD: <code>.umd.cjs</code></li>
+</ul>
+<h2>Build Output</h2>
+<pre><code>dist/
+├── index.d.ts           # 🎯 All TypeScript declarations
+├── my-library.js        # ESM format
+├── my-library.cjs       # CommonJS format
+└── my-library.umd.cjs   # UMD format for browsers
+</code></pre>
+<h2>Usage Examples</h2>
+<p><strong>Node.js CommonJS:</strong></p>
+<pre><code class="language-javascript">const { myFunction } = require(&#39;my-library&#39;);
+</code></pre>
+<p><strong>Node.js ESM:</strong></p>
+<pre><code class="language-javascript">import { myFunction } from &#39;my-library&#39;;
+</code></pre>
+<p><strong>Browser Script Tag:</strong></p>
+<pre><code class="language-html">&lt;script src=&quot;./dist/my-library.umd.cjs&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  console.log(MyLibrary.myFunction());
+&lt;/script&gt;
+</code></pre>
+<p><strong>Browser ESM:</strong></p>
+<pre><code class="language-html">&lt;script type=&quot;module&quot;&gt;
+  import { myFunction } from &#39;./dist/my-library.js&#39;;
+  console.log(myFunction());
+&lt;/script&gt;
+</code></pre>
+<p><strong>TypeScript (any environment):</strong></p>
+<pre><code class="language-typescript">import type { MyType } from &#39;my-library&#39;;
+import { myFunction } from &#39;my-library&#39;;
+</code></pre>
+<h2>Common Pitfalls</h2>
+<ol>
+<li><strong>Missing <code>vite-plugin-dts</code></strong> → No TypeScript declarations</li>
+<li><strong>Missing <code>rollupTypes: true</code></strong> → Complex directory-based type exports  </li>
+<li><strong>Wrong export order</strong> → Module resolution issues</li>
+<li><strong>Missing <code>&quot;type&quot;: &quot;module&quot;</code></strong> → Import/export confusion</li>
+<li><strong>Wrong file extensions</strong> → Runtime errors</li>
+</ol>
+<h2>Commands</h2>
+<pre><code class="language-bash"># Build once
+npm run build
+
+# Watch mode for development
+npm run dev
+
+# Install in another project
+npm install /path/to/your/library
+</code></pre>
+<p>This setup provides a <strong>simple, clean library</strong> that &quot;just works&quot; everywhere without complex configuration! 🎉</p>
+
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <div class="giscus"></div>
+  </footer>
+</article>
+</main>
+    <aside>
+      <input id="themeCheck" type="checkbox">
+    </aside>
+    <footer>
+      <small>&copy; 1973-2025 IoloTheBard. All rights reserved.</small>
+    </footer>
+    <script>hljs.configure({languages:[]});hljs.highlightAll();</script>
+  </body>
+</html>
