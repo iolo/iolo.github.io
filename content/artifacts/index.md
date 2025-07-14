@@ -4,7 +4,7 @@ title: Artifacts
 
 ### publications
 
-- [개발자 원칙](https://product.kyobobook.co.kr/detail/S000200381165), 2022, 골든래빗
+- [개발자 원칙](https://product.kyobobook.co.kr/detail/S000214054310), 2022-2024, 골든래빗
 
 ### presentations
 
@@ -51,6 +51,7 @@ title: Artifacts
 ### fonts
 
 - [8x4x4-fonts](/8x4x4-fonts) : TrueType and Web Fonts from Old Korean 8x4x4 Bitmap Fonts for PC/DOS
+- [6x2x1-fonts](/6x2x1-fonts) : TrueType and Web Fonts from Older Korean 6x2x1 Bitmap Fonts for Apple II
 - [7x12-fonts](/7x12-fonts) : TrueType and Web Fonts based on 7x12 Bitmap Fonts for Apple II
 - [call3327-fonts](/call3327-fonts) : TrueType and Web Fonts from `CALL 3327` Korean Program for Apple II
 - ...
