@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="author" content="" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="왜 7x12 인가?" />
+    <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta property="og:url" content="https://iolo.krhttps://iolo.kr/posts/why7x12.html" />
+    <meta property="og:site_name" content="Quest of Iolo" />
+    <meta property="og:image" content="/assets/img/iolo50.png" />
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="왜 7x12 인가?" />
+    <meta name="twitter:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="twitter:url" content="https://iolo.krhttps://iolo.kr/posts/why7x12.html" />
+    <meta name="twitter:image:src" content="/assets/img/iolo50.png" />
+    
+    <link rel="canonical" href="https://iolo.kr/posts/why7x12.html" />
+    <link rel="alternate" type="application/rss+xml" href="https://iolo.kr/rss" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/scripts.js" defer></script>
+    <title>왜 7x12 인가? - Quest of Iolo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="iolo/iolo.github.io"
+      data-repo-id="R_kgDOH6UEWg"
+      data-category="giscus"
+      data-category-id="DIC_kwDOH6UEWs4CV5Qw"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/" class="nolink">Quest of Iolo</a></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/artifacts">Artifacts</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main><article>
+  <header>
+    <h2>왜 7x12 인가?</h2>
+    <time datetime="2025-07-30T00:28:45.063Z" pubdate>2025. 7. 30. 오전 9:28:45</time>
+    
+    <!--
+    
+    -->
+  </header>
+  <section class="post-content">
+  <p>애플2의 고해상도(?) 그래픽 모드 해상도는 280x192
+가로 40바이트. 영어 40자.</p>
+<blockquote>
+<p>40<em>8=320?
+1바이트는 8비트, 그러나 애플2는 최상위 비트를 반도트 시프트로 사용.
+따라서 8비트 중에서 7비트만 유효.
+40</em>7=280
+한글은 계산의 편의를 위해 통상 2배. 20자. Orz</p>
+</blockquote>
+<p>한글을 표현하기 위한 최소 픽셀은?
+가장 복잡한 글자: 쀍? 뤮! 너비는 ㅃ, 높이는 ㄹ!
+가로 9+자간
+세로 13+행간</p>
+<pre><code>#.#.#.#.#.#####.#.#.
+#.#.#.#.#.....#.#.#.
+#######.#.#######.#.
+#.#.#.#.#.#.... #.#.
+#####.#.#.#####.#.#.
+......#.#.......#.#.
+#######.#.#######.#. 
+..#..........#......
+#########.#########.
+...#.#.#.....#.#.#..
+####.#.#..####.#.#..
+#....#.#..#....#.#..
+#########.#########.
+....................
+</code></pre>
+<p>가로는?
+기본은 7픽셀+1MSB. 280/8=40자.
+9+자간1=10, 280/10=28자! 괜찮은데?
+두배해서 (7+1MSB)x2=14픽셀+2MSB, 280/14=20자. 흠...
+어렵고 복잡하고 느린 비트연산 vs 8자
+미리 시프트해 놓은 테이블로 쉽고 빠르게 할 수 있을까?
+... 그러나... 7은 소수(prime number)... 규칙성이 없음 OTL
+결론: 그냥 2배해서 14픽셀+2MSB. 280/14=20자</p>
+<pre><code>&lt;----------&gt;&lt;----------&gt;
+.#.#.#..#.#..#####..#.#.
+.#.#.#..#.#......#..#.#.
+.#####.##.#..#####.##.#.
+.#.#.#..#.#..#..... #.#.
+.#####..#.#..#####..#.#.
+........#.#.........#.#.
+.#####..#.#..#####..#.#. 
+...#...........#.......
+.####.#####..####.#####.
+....#..#.#......#..#.#..
+.####..#.#...####..#.#..
+.#.....#.#...#.....#.#..
+.####.#####..####.#####.
+........................
+</code></pre>
+<p>세로는? 192픽셀에 몇 줄?
+기본은 8픽셀. 192/8=24줄. 
+13+행간1=14, 192/14=13.714285714285714 1줄 더 쓸려고 10픽셀을 버리다니... OTL
+그냥 가로랑 똑같이 2배해서 16픽셀? 192/16=12줄... 너무 적어... OTL
+8보다 크고, 16보다 작은 192의 약수는... 12!!
+192/12=16! 12픽셀 16줄!
+어떻게 2픽셀을 줄일까?</p>
+<p>가로모음 중성은 더 줄일 수가 없음. 2픽셀 + 위 또는 아래 공간 1픽셀 = 3픽셀
+초성을 4로 줄이면 4+3+4+1=12!!!
+ㄹ,ㅌ이 문제! 그려보자!</p>
+<pre><code>.#####.#####.
+....##.####.. 
+.###...#.....
+.#####..####.
+</code></pre>
+<pre><code>&lt;-----------&gt;&lt;-----------&gt;
+.#.#.#...#.#..#####...#.#.
+.#####...#.#.....##...#.#.
+.#.#.#.###.#..###...###.#.
+.#####...#.#..#####...#.#.
+.........#.#..........#.#.
+.#####...#.#..#####...#.#. 
+...#............#.........
+.#####.#####..#####.#####.
+....##..#.#......##..#.#..
+.###....#.#...###....#.#..
+.#####.#####..#####.#####.
+..........................
+</code></pre>
+<p>두둥! 7x12!!</p>
+<p>애플2 고해상도 그래픽 모드(280x192)에서 20자x16줄(영어는 40자x16줄) 표시 가능!</p>
+
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <div class="giscus"></div>
+  </footer>
+</article>
+</main>
+    <aside>
+      <input id="themeCheck" type="checkbox">
+    </aside>
+    <footer>
+      <small>&copy; 1973-2025 IoloTheBard. All rights reserved.</small>
+    </footer>
+    <script>hljs.configure({languages:[]});hljs.highlightAll();</script>
+  </body>
+</html>
