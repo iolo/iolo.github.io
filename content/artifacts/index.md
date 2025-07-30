@@ -37,6 +37,7 @@ title: Artifacts
 
 ### retro
 
+- [fed](/fed) : Old-school Bitmap Font EDitor made with [Claude Code](https://claude.ai/code)
 - [apple2-disk-manager](/apple2-disk-manager) : Apple II Dos and ProDOS Disk Manager
 - [apple2-image-converter](/apple2-image-converter) : Apple II Hi-res and Double Hi-res Image Converter
 - [apple2-picture-books](/apple2-picture-books) : Applesoft Basic Program for Picture Books
@@ -53,6 +54,6 @@ title: Artifacts
 - [8x4x4-fonts](/8x4x4-fonts) : TrueType and Web Fonts from Old Korean 8x4x4 Bitmap Fonts for PC/DOS
 - [6x2x1-fonts](/6x2x1-fonts) : TrueType and Web Fonts from Older Korean 6x2x1 Bitmap Fonts for Apple II
 - [7x12-fonts](/7x12-fonts) : TrueType and Web Fonts based on 7x12 Bitmap Fonts for Apple II
-- [call3327-fonts](/call3327-fonts) : TrueType and Web Fonts from `CALL 3327` Korean Program for Apple II
+- [call3327-fonts](/call3327-fonts) : TrueType and Web Fonts from [CALL 3327](/call3327) Korean Program for Apple II
 - ...
 
