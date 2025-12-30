@@ -38,8 +38,10 @@ title: Artifacts
 ### retro
 
 - [fed](/fed) : Old-school Bitmap Font EDitor made with [Claude Code](https://claude.ai/code)
+- [a2dgrx](/a2dgrx) : Apple II Double Lo-res Graphics Extension
 - [apple2-disk-manager](/apple2-disk-manager) : Apple II Dos and ProDOS Disk Manager
 - [apple2-image-converter](/apple2-image-converter) : Apple II Hi-res and Double Hi-res Image Converter
+- [apple2-image-editor](/apple2-image-editor) : Apple II Lo-res, Double Lo-res, Hi-res and Double Hi-res Image Editor
 - [apple2-picture-books](/apple2-picture-books) : Applesoft Basic Program for Picture Books
 - [call3327](/call3327) : Restoration of `CALL 3327` Korean Program for Apple II
 - [apple2-tl1](/apple2-tl1) : Restoration of Apple II TL/1 Compiler and Runtime
