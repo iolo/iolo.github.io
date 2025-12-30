@@ -2,8 +2,8 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css") only screen and (prefers-color-scheme: light);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css") only screen and (prefers-color-scheme: dark);
 :root {
-  --font-body: "7x12x3", "IBM Plex Sans KR", sans-serif;
-  --font-code: "7x12x3", "IBM Plex Mono", monospace;
+  --font-body: '7x12x3', 'IBM Plex Sans KR', sans-serif;
+  --font-code: '7x12x3', 'IBM Plex Mono', monospace;
 }
 
 @font-face {
