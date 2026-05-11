@@ -33,22 +33,23 @@ title: Artifacts
 
 - [appspresso](/appspresso) : Cross-platform Mobile App Development Platform
 - [fastpress](/fastpress) : Yet Another Static Site Generator
+- [redraw](/redraw) : Lightweight MSPaint-style drawing component for React, made with [Codex](https://openai.com/codex)
 - ...
 
 ### retro
 
-- [a2dgrx](/a2dgrx) : Apple II Double Lo-res Graphics Extension
-- [a2e-4164-4464](https://github.com/a2e-usb-kbd) : Apple //e daughter board to replace 4x4164 with a single 4466
-- [a2e-usb-kbd](https://github.com/a2e-usb-kbd) : Apple //e daughter board for USB HID Keyboard
-- [apple2-call3327](/apple2-call3327) : Restoration of `CALL 3327` Korean Program for Apple II
+- [a2dgrx](https://github.com/iolo/a2dgrx) : Apple II Double Lo-res Graphics Extension
+- [a2e-4164-4464](https://github.com/iolo/a2e-4164-4464) : Apple //e daughter board to replace 4x4164 with a single 4466
+- [a2e-usb-kbd](https://github.com/iolo/a2e-usb-kbd) : Apple //e daughter board for USB HID Keyboard
+- [apple2-call3327](https://github.com/iolo/call3327) : Restoration of `CALL 3327` Korean Program for Apple II
 - [apple2-disk-manager](/apple2-disk-manager) : Apple II Dos and ProDOS Disk Manager
 - [apple2-image-converter](/apple2-image-converter) : Apple II Hi-res and Double Hi-res Image Converter
-- [apple2-image-editor](/apple2-image-editor) : Apple II Lo-res, Double Lo-res, Hi-res and Double Hi-res Image Editor
+- [apple2-image-editor](/apple2-image-editor) : Apple II Lo-res, Double Lo-res, Hi-res and Double Hi-res Image Editor, made with [Claude Code](https://claude.ai/code)
 - [apple2-picture-books](/apple2-picture-books) : Applesoft Basic Program for Picture Books
-- [apple2-tl1](/apple2-tl1) : Restoration of Apple II TL/1 Compiler and Runtime
+- [apple2-tl1](https://github.com/iolo/apple2-tl1) : Restoration of Apple II TL/1 Compiler and Runtime
 - [esp8266-wifi-modem](https://github.com/iolo/esp8266-wifi-modem) : ESP8266 WiFi Modem for Apple II with Super Serial Card
 - [fc-av-mod](https://github.com/iolo/fc-av-mod) : Yet another Famicom AV mod with Power LED and USB Power.
-- [fed](/fed) : Old-school Bitmap Font EDitor made with [Claude Code](https://claude.ai/code)
+- [fed](/fed) : Old-school Bitmap Font EDitor, made with [Claude Code](https://claude.ai/code)
 - [sun-type6-keyboard](https://github.com/iolo/sun-type6-keyboard) : USB Converter for Sun Type 6 Keyboard
 - [x2kbd](https://github.com/iolo/x2kbd) : PS/2 Converter for MSX X-2(CPC-400) Keyboard
 - ...

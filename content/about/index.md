@@ -35,7 +35,7 @@ permalink: /about/
   - I'm In: location based social media web & mobile service
   - PuddingFace Mobile for iOS(International) and Android
 - 2007.05-2009.10 Tech Lead & S. Engineer, Thinkfree, became [Hancom](https://hancom.com/)
-  - Thinkfree Office Live: web-based office productivity application suite similar to [Google Drive](https://drive.google.com/) and [Microsoft Office 365](https://www.office.com/) nowadays. 
+  - Thinkfree Office Live: web-based office productivity application suite similar to [Google Drive](https://drive.google.com/) and [Microsoft Office 365](https://www.office.com/) nowadays.
 - and so on...
 
 ## Skills
@@ -61,7 +61,7 @@ permalink: /about/
 - [LinkedIn](https://www.linkedin.com/in/iolothebard/)
 - [Facebook](https://www.facebook.com/iolothebard/)
 - [Twitter](https://twitter.com/iolothebard/)
-- [YouTube](https://youtube.com/@iolo6502/)
+- [YouTube](https://youtube.com/@quest-of-iolo/)
 - or somewhere in [Jeju island](https://goo.gl/maps/zGWvqxtDfwZUpH6m9)
 
 <figure>
@@ -69,7 +69,7 @@ permalink: /about/
   <figcaption>Iolo in Jeju Island</figcaption>
 </figure>
 
-This site was built with 
+This site was built with
 - [Fastpress](https://github.com/iolo/fastpress/)
 - [Github Pages](https://pages.github.com/)
 - [7x12 Fonts](https://github.com/iolo/7x12-fonts/)
