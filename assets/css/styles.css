@@ -2,13 +2,13 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css") only screen and (prefers-color-scheme: light);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css") only screen and (prefers-color-scheme: dark);
 :root {
-  --font-body: '7x12x3', 'IBM Plex Sans KR', sans-serif;
-  --font-code: '7x12x3', 'IBM Plex Mono', monospace;
+  --font-body: '7x12', 'IBM Plex Sans KR', sans-serif;
+  --font-code: '7x12', 'IBM Plex Mono', monospace;
 }
 
 @font-face {
-  font-family: "7x12x3";
-  src: url("/assets/font/7x12x3.woff") format("woff"), url("/assets/font/7x12x3.woff2") format("woff2"), url("/assets/font/7x12x3.ttf") format("truetype"), url("/assets/font/7x12x3.otf") format("opentype");
+  font-family: "7x12";
+  src: url("/assets/font/7x12.woff") format("woff"), url("/assets/font/7x12.woff2") format("woff2"), url("/assets/font/7x12.ttf") format("truetype"), url("/assets/font/7x12.otf") format("opentype");
 }
 :root.light-theme {
   --bg-color: #fff;
@@ -111,6 +111,7 @@ figure > * {
 }
 
 #themeCheck {
+  /*
   appearance: none;
   width: 60px;
   height: 30px;
@@ -122,10 +123,25 @@ figure > * {
   transition: all 0.5s ease-in;
   cursor: pointer;
   z-index: 1;
+  */
+  appearance: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/moon.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
+#themeCheck:checked {
+  background-image: url("../img/sun.svg");
+}
+
+/*
 #themeCheck::before {
-  content: "";
+  content: '';
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -140,3 +156,4 @@ figure > * {
 #themeCheck:checked::before {
   left: 32px;
 }
+*/
