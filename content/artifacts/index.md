@@ -38,9 +38,11 @@ title: Artifacts
 
 ### retro
 
+- [a2-peek-poke-call](/a2-peek-poke-call): Apple II Peek, Poke and Call List
 - [a2dgrx](https://github.com/iolo/a2dgrx) : Apple II Double Lo-res Graphics Extension
 - [a2e-4164-4464](https://github.com/iolo/a2e-4164-4464) : Apple //e daughter board to replace 4x4164 with a single 4466
 - [a2e-usb-kbd](https://github.com/iolo/a2e-usb-kbd) : Apple //e daughter board for USB HID Keyboard
+- [a2skills](https://github.com/iolo/a2skills) : Apple II agent skills
 - [apple2-call3327](https://github.com/iolo/call3327) : Restoration of `CALL 3327` Korean Program for Apple II
 - [apple2-disk-manager](/apple2-disk-manager) : Apple II Dos and ProDOS Disk Manager
 - [apple2-image-converter](/apple2-image-converter) : Apple II Hi-res and Double Hi-res Image Converter
