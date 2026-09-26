@@ -49,6 +49,8 @@ title: Artifacts
 - [apple2-picture-books](/apple2-picture-books) : Applesoft Basic Program for Picture Books
 - [apple2-tl1](https://github.com/iolo/apple2-tl1) : Restoration of Apple II TL/1 Compiler and Runtime
 - [call3327](https://github.com/iolo/call3327) : Restoration of `CALL 3327` Korean Program for Apple II
+- [easy6502](/easy6502): Easy 6502 한글 번역
+- [easyforth](/easyforth): Easy Forth 한글 번역
 - [esp8266-wifi-modem](https://github.com/iolo/esp8266-wifi-modem) : ESP8266 WiFi Modem for Apple II with Super Serial Card
 - [fc-av-mod](https://github.com/iolo/fc-av-mod) : Yet another Famicom AV mod with Power LED and USB Power.
 - [fed](/fed) : Old-school Bitmap Font EDitor, made with [Claude Code](https://claude.ai/code)
