@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="author" content="" />
+    
+    <meta name="keywords" content="retro,apple2" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="정체성 위기 - 읽기 좋은 코드와 좋은 코드" />
+    <meta property="og:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta property="og:url" content="https://iolo.krhttps://iolo.kr/posts/2026-09-07-identity-crisis" />
+    <meta property="og:site_name" content="Quest of Iolo" />
+    <meta property="og:image" content="/assets/img/iolo50.png" />
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="정체성 위기 - 읽기 좋은 코드와 좋은 코드" />
+    <meta name="twitter:description" content="Ho eyo he hum! Here the Jesters sing Ho Ho, But why they do, I&#39;ll never know." />
+    <meta name="twitter:url" content="https://iolo.krhttps://iolo.kr/posts/2026-09-07-identity-crisis" />
+    <meta name="twitter:image:src" content="/assets/img/iolo50.png" />
+    
+    <link rel="canonical" href="https://iolo.kr/posts/2026-09-07-identity-crisis" />
+    <link rel="alternate" type="application/rss+xml" href="https://iolo.kr/rss" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/scripts.js" defer></script>
+    <title>정체성 위기 - 읽기 좋은 코드와 좋은 코드 - Quest of Iolo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="iolo/iolo.github.io"
+      data-repo-id="R_kgDOH6UEWg"
+      data-category="giscus"
+      data-category-id="DIC_kwDOH6UEWs4CV5Qw"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/" class="nolink">Quest of Iolo</a></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/artifacts">Artifacts</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main><article>
+  <header>
+    <h2>정체성 위기 - 읽기 좋은 코드와 좋은 코드</h2>
+    <time datetime="2026-09-07T00:00:00.000Z" pubdate>9/7/2026, 12:00:00 AM</time>
+    
+    <!--
+    <dl><dt>tags</dt><dd>retro</dd><dd>apple2</dd></dl>
+    -->
+  </header>
+  <section class="post-content">
+  <figure>
+  <img src="/files/identity-crisis.jpg">
+  <figcaption>Happy Mac by Susan Kare</figcaption>
+</figure><p>애플2 디스코드 채널에서 누군가가 <a href="https://en.wikipedia.org/wiki/Applesoft_BASIC">애플소프트 베이직</a> 코드를 공유했다.</p>
+<p>애플소프트베이직으로 작성된 2라인 프로그램 <a href="https://www.apple2programs.com/programs/2024/03/19/identity-crisis.html">Identify Crisis</a>
+을 <strong>읽기 좋게</strong> 고쳤단다.</p>
+<pre><code>0 A$ = &quot;2D40D030F0602@209010@0109010@0109010@010B0103020203010B0103020203010&lt;010707010&lt;010707010&lt;0106170109010@010?01040305010&lt;0105360109010@0109010@010602@2030F030F030F030F09011952030F030F030F030F01F40D040D040D01F&quot;
+
+10 P = 1
+20 HGR2
+30 HCOLOR = 6
+40 HPLOT 0 , 0 : CALL -3082
+50 FOR Y = 31 TO 62
+60 C = 4
+70 I = ASC(MID$(A$,P,1))-48
+80 J = INT( I / 3 )
+90 X = 114 + ( I - J * 3 ) * 2
+100 FOR M = P TO P + J * 2
+110 HCOLOR = C
+120 C = 11 - C
+130 S = 2 * (ASC(MID$(A$,M+1,1))-47)
+140 HPLOT X , Y * 2 TO X+S-1 , Y * 2
+150 HPLOT X , Y * 2 + 1 TO X+S-1 , Y * 2 + 1
+160 X = X + S
+170 P = P + 1
+180 NEXT M
+190 P = P + 1
+200 NEXT Y
+210 END
+</code></pre>
+<p>뭐가 읽기 좋아졌다는 거지?? 줄바꿈(코드 포매팅만)만 바꾼다고 읽기 좋은 코드가 되는 건 아니다.</p>
+<p>이 코드의 핵심은 <strong>첫번째 줄의 난해한 문자열</strong>이다.</p>
+<pre><code>2D40D030F0602@209010@0109010@0109010@010B0103020203010B0103020203010&lt;010707010&lt;010707010&lt;0106170109010@010?01040305010&lt;0105360109010@0109010@010602@2030F030F030F030F09011952030F030F030F030F01F40D040D040D01F
+</code></pre>
+<p><a href="https://chatgpt.com/share/6a9e0fd0-6ec0-83e8-a4a3-7c551ad98602">ChatGPT의 도움을 받아 분석</a>했다.</p>
+<p>TL;DR 베이직으로 구현한 RLE(run-length encoding)!</p>
+<p>문자열(<code>A$</code>)의 의미는 다음과 같다:</p>
+<pre><code>A$ =
+    32 scanlines of compressed Happy Mac bitmap
+
+per scanline:
+    header:
+        start-X offset
+        number of alternating runs
+
+    runs:
+        lengths of BLACK, WHITE, BLACK, WHITE, ...
+</code></pre>
+<p>난해한 문자열을 구조적인 데이터로 해체하면 읽기 좋은 <strong>교육용 코드</strong>가 나오겠지만,
+그 코드는 좋은 코드일까?</p>
+<p>이 프로그램은 애초에 읽기 좋으라고 만든 프로그램이 아니다.
+이 프로그램의 의도는 <em>최소한의 코드</em>(512바이트 이내)로 Happy Mac을 그리는 것이다.
+이 프로그램은 읽기 좋은 코드는 아니지만, 의도를 잘 드러내는 좋은 코드다.</p>
+<p><a href="http://product.kyobobook.co.kr/detail/S000214054310">개발자의 원칙</a>에서 <strong>읽기 좋은 코드가 좋은 코드</strong>라고 썼는데... 혹시라도 개정판을 낼 기회가 있다면(없겠지만), 이렇게 고쳐야겠다:</p>
+<blockquote>
+<p>읽기 좋은 코드가 좋은 코드다.</p>
+<p>읽기 좋은 코드보다 더 좋은 코드는 &quot;의도를 잘 드러내는 코드&quot;다.</p>
+</blockquote>
+<p><strong>뽀나스</strong> 위의 코드에서 첫번째 줄을 이렇게 바꿔서 실행해보자.</p>
+<pre><code>0 A$=&quot;0O6E03033I046B02073D099;4900019:041226690729690?03&lt;90901020266650:666906366A34:?32&gt;=32&gt;=31@&lt;31@&lt;6030=;30B;6020&gt;;6020&gt;;6020&gt;;30B;6030=;31@&lt;6140:&lt;32&gt;=32&gt;=34:?366A0O&quot;
+</code></pre>
+
+  </section>
+  <footer>
+    <!-- todo: social share links -->
+    <div class="giscus"></div>
+  </footer>
+</article>
+</main>
+    <aside>
+      <input id="themeCheck" type="checkbox">
+    </aside>
+    <footer>
+      <small>&copy; 1973-2026 IoloTheBard. All rights reserved.</small>
+    </footer>
+    <script>hljs.configure({languages:[]});hljs.highlightAll();</script>
+  </body>
+</html>
