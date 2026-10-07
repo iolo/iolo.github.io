@@ -1,16 +1,9 @@
 :root {
-  --font-body: '7x12', 'IBM Plex Sans KR', sans-serif;
-  --font-code: '7x12', 'IBM Plex Mono', monospace;
+  --font-body: 'Jetendard', sans-serif;
+  --font-code: 'Jetendard', monospace;
 }
 
-@font-face {
-  font-family: '7x12';
-  src:
-    url('/assets/font/7x12.woff') format('woff'),
-    url('/assets/font/7x12.woff2') format('woff2'),
-    url('/assets/font/7x12.ttf') format('truetype'),
-    url('/assets/font/7x12.otf') format('opentype');
-}
+@import url('../font/jetendard.css');
 
 :root.light-theme {
   --bg-color: #fff;
@@ -100,7 +93,14 @@ body {
     width: 960px;
     max-width: 90%;
     margin: 0 auto;
-    line-height: 1.2em;
+    line-height: 1.5em;
+    > article {
+      > header {
+        > h2 {
+          line-height: 1.5em;
+        }
+      }
+    }
   }
 
   > footer {
